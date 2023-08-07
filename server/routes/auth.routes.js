@@ -1,9 +1,10 @@
-const Router = require("express")
+ const Router = require("express")
 const User = require('../models/User')
 const bcrypt = require('bcrypt')
 const {check, validationResult} = require('express-validator')
 const router = new Router()
 const jwt = require('jsonwebtoken')
+const authMiddlewear = require('../middlewear/authMiddlewear')
 router.post('/signup',
     [
         check('email', 'Uncorrect email').isEmail(),
@@ -52,9 +53,29 @@ router.post('/login',  async (req,res)=>{
             return res.status(400).json({message: `Invalid password`})
         }
 
-        const token = jwt.sign({ email }, 'secret', { expiresIn: '1hr' })
+        const token = jwt.sign({id: user.id}, 'secret', { expiresIn: '1hr' })
 
 
+        return res.json({
+            token,
+            user:{
+                id: user.id,
+                email: user.email,
+                username: user.username,
+                status: user.status,
+                avatar: user.avatar,
+                friends: user.friends,
+                posts: user.posts
+            }})
+    }catch (err){
+        console.log(err)
+        res.send({message: "Server error"})
+    }
+})
+ router.get('/auth', authMiddlewear,  async (req,res)=>{
+    try {
+        const user = await User.findOne({_id: req.user.id})
+        const token = jwt.sign({id: user.id}, 'secret', { expiresIn: '1hr' })
         return res.json({
             token,
             user:{
