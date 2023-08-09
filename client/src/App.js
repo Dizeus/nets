@@ -6,6 +6,7 @@ import {Suspense, useEffect} from "react";
 import Login from "./Components/Login/Login";
 import {useDispatch} from "react-redux";
 import {auth} from "./redux/user-reducer";
+import FriendsContainer from "./Components/Friends/FriendsContainer";
 
 function App() {
     const isAuth = true;
@@ -24,9 +25,10 @@ function App() {
                 <Suspense fallback={<div>Loading...</div>}>
                     <Routes>
                         <Route path="/home/:userId?" element={<HomeContainer/>}/>
+                        <Route path="/friends" element={<FriendsContainer />} />
                         {/*<Route path="/messages/*" element={<Messages/>}/>
                         <Route path="/comunities" element={<Communities />} />
-                        <Route path="/friends" element={<FriendsContainer />} />
+
                         <Route path="/games" element={<Games />} />
                         <Route path="/settings" element={<Settings />} />*/}
                         <Route path="/login" element={<Login />} />

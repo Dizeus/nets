@@ -1,12 +1,15 @@
 import defAvatar from '../../assets/avatar.webp'
 import {useState} from "react";
 import {Formik} from "formik";
+import {useDispatch} from "react-redux";
+import {updateUserData} from "../../redux/user-reducer";
 
-const Bio = ({avatar, status, username}) => {
+const Bio = ({avatar, status, username, id, fullname}) => {
 
     const [editMode, setEditMode] = useState(false)
+    const dispatch = useDispatch();
     const saveNewProfileData = (values) =>{
-        alert(values.status)
+        dispatch(updateUserData(values, id))
     }
     return (
             <div className="home__bio bio">
@@ -15,15 +18,15 @@ const Bio = ({avatar, status, username}) => {
                          className="bio__avatar"/>
                     <input className="bio__avatar-edit" placeholder='value' type="file"/>
                 </div>
-                {editMode?<BioDescriptionForm saveNewProfileData={saveNewProfileData} avatar={avatar} status={status} username={username} setEditMode={setEditMode}/>:<BioDescription  avatar={avatar} status={status} username={username} setEditMode={setEditMode}/>}
+                {editMode?<BioDescriptionForm fullname={fullname} saveNewProfileData={saveNewProfileData} avatar={avatar} status={status} username={username} setEditMode={setEditMode}/>:<BioDescription  avatar={avatar} fullname={fullname} status={status} username={username} setEditMode={setEditMode}/>}
             </div>
     );
 }
 
-const BioDescription = ({status, username, name, setEditMode})=>{
+const BioDescription = ({status, username, fullname, setEditMode})=>{
 
     return <div className="bio__description description">
-        <div className="description__name">{name || "User"}</div>
+        <div className="description__name">{fullname || "User"}</div>
         <div className="description__info">
             <div className="description__status">
                 <span className="description__categories">Status: </span>
@@ -39,9 +42,9 @@ const BioDescription = ({status, username, name, setEditMode})=>{
 }
 
 
-const BioDescriptionForm = ({status, username, name, setEditMode, saveNewProfileData}) => {
+const BioDescriptionForm = ({status, username, fullname, setEditMode, saveNewProfileData}) => {
     return (<Formik
-        initialValues={{status, username, name}}
+        initialValues={{status: status || '', username: username || '', fullname: fullname || ''}}
         validate={values => {
             const errors = {};
 
@@ -77,10 +80,10 @@ const BioDescriptionForm = ({status, username, name, setEditMode, saveNewProfile
                 <div className="">Fullname</div>
                 <input
                     type="text"
-                    name="name"
+                    name="fullname"
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    value={values.name}
+                    value={values.fullname}
                     placeholder={"Fullname"}
                 />
                 <div className="">Status:</div>

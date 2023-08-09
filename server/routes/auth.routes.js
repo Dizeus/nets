@@ -18,9 +18,9 @@ router.post('/signup',
         if(!errors.isEmpty()){
             return res.status(400).json({message: `Uncorrect request`, errors})
         }
-        const {email, password} = req.body
+        const {email, password, fullname} = req.body
 
-        console.log(email, password)
+        console.log(email, password, fullname)
 
         const isUserExist = await User.findOne({email})
         console.log(isUserExist)
@@ -30,7 +30,7 @@ router.post('/signup',
 
         const salt = bcrypt.genSaltSync(10)
         const hashedPassword = bcrypt.hashSync(password, salt)
-        const user = new User({email, password: hashedPassword})
+        const user = new User({email, password: hashedPassword, fullname})
         await user.save()
         return res.json('User was created')
     }catch (err){
@@ -65,7 +65,8 @@ router.post('/login',  async (req,res)=>{
                 status: user.status,
                 avatar: user.avatar,
                 friends: user.friends,
-                posts: user.posts
+                posts: user.posts,
+                fullname: user.fullname
             }})
     }catch (err){
         console.log(err)
@@ -85,7 +86,8 @@ router.post('/login',  async (req,res)=>{
                 status: user.status,
                 avatar: user.avatar,
                 friends: user.friends,
-                posts: user.posts
+                posts: user.posts,
+                fullname: user.fullname
             }})
     }catch (err){
         console.log(err)

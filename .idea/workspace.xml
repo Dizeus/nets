@@ -8,14 +8,23 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/API/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/API/api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Header/HeaderContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Header/HeaderContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Home/Bio.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Home/Bio.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Home/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Home/HomeContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Home/HomeContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Home/MyPosts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Home/MyPosts.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Home/Post.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Home/Post.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Login/Login.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/redux/post-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/post-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/redux/user-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/user-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/Post.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/User.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/auth.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/auth.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/post.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/post.routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,20 +57,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/web/react/itkama&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/web/react/itkama",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2023.1.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -85,6 +95,11 @@
       <workItem from="1691303489092" duration="1323000" />
       <workItem from="1691304887584" duration="5198000" />
       <workItem from="1691329155998" duration="5186000" />
+      <workItem from="1691394526069" duration="6055000" />
+      <workItem from="1691402786395" duration="5498000" />
+      <workItem from="1691490646825" duration="8388000" />
+      <workItem from="1691502780662" duration="1638000" />
+      <workItem from="1691569393276" duration="1811000" />
     </task>
     <servers />
   </component>

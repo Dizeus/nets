@@ -14,7 +14,7 @@ function Login({isAuth, login, signup}){
                 <div className="auth-container">
                     <div className="auth-container-box">
                         <Formik
-                            initialValues={{ email: '', password: '', confirmPassword: '',}}
+                            initialValues={{ email: '', fullname: '', password: '', confirmPassword: '',}}
                             validate={values => {
                                 const errors = {};
                                 if (!isLoginForm && values.password != values.confirmPassword) {
@@ -28,7 +28,7 @@ function Login({isAuth, login, signup}){
 
                             }}
                             onSubmit={(values, { setSubmitting, setStatus }) => {
-                                isLoginForm?login(values.email, values.password): signup(values.email, values.password);
+                                isLoginForm?login(values.email, values.password): signup(values.email, values.password, values.fullname);
                                 setSubmitting(false);
                             }}
                         >
@@ -46,6 +46,7 @@ function Login({isAuth, login, signup}){
 
                                 <form style={{display: 'flex', flexDirection: 'column', rowGap:'10px'}} onSubmit={handleSubmit}>
                                     <h2>{isLoginForm  ? 'Please log in' : 'Please sign up!'}</h2>
+                                    Email
                                     <input
                                         type="email"
                                         name="email"
@@ -56,6 +57,16 @@ function Login({isAuth, login, signup}){
                                         placeholder={"Email"}
                                     />
                                     {errors.email && touched.email && errors.email}
+                                    {!isLoginForm && <><div>Fullname</div> <input
+                                        type="text"
+                                        name="fullname"
+                                        className='auth-input'
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}
+                                        value={values.fullname}
+                                        placeholder={"Fullname"}
+                                        /></>}
+                                    Password
                                     <input
                                         type="password"
                                         name="password"

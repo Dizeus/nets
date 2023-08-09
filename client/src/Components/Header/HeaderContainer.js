@@ -10,7 +10,7 @@ const HeaderContainer = (props) =>{
 }
 
 const mapStateToProps = (state) =>({
-    username: state.user.data.username,
+    fullname: state.user.data.fullname,
     email: state.user.data.email,
     isAuth: state.user.isAuth,
     avatar: state.user.data.avatar

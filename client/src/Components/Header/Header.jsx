@@ -1,6 +1,6 @@
 import {NavLink} from "react-router-dom";
 import defAvatar from '../../assets/avatar.webp'
-function Header({username, email, isAuth, avatar, logout}){
+function Header({fullname, email, isAuth, avatar, logout}){
     return (
         <header className="header">
             <div className="header__container">
@@ -120,7 +120,7 @@ function Header({username, email, isAuth, avatar, logout}){
                     <div className="header__profile">
                         <div className='header__profile-content'>
                             <img className='header__profile-image' src={avatar?avatar:defAvatar} alt=""/>
-                            <div className='header__profile-username'>{username || email}</div>
+                            <div className='header__profile-username'>{fullname}</div>
                         </div>
                         <button className='header__logout' onClick={()=>logout()}>logout</button>
                     </div>:

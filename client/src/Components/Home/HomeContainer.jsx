@@ -6,11 +6,7 @@ import {withAuthNavigate} from "../../HOC/withAuthNavigate";
 import Home from "./Home";
 
 const HomeContainer = (props)=>{
-
-
     return <Home {...props}/>
-
-
 }
 
 export function withRouter(Children){

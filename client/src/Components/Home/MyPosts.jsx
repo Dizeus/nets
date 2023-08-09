@@ -17,7 +17,7 @@ function MyPosts({user}) {
         <NewPostForm onAddPost={onAddPost}/>
         <h2 className="posts__title">My posts</h2>
         {user.posts?.map((post) => (
-            <Post key={post.id} post={post}/>
+            <Post key={post._id} post={post}/>
         ))}
     </div>
 }
@@ -40,6 +40,7 @@ let NewPostForm = ({onAddPost}) =>{
         }}
         onSubmit={(values, { setSubmitting }) => {
             onAddPost(values.newPostText)
+            values.newPostText = ''
             setSubmitting(false);
         }}
     >

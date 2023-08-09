@@ -220,7 +220,49 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
     font-weight: 700;
     color: rgb(169, 168, 168);
 }
-
+.posts__title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    margin: 0 0 10px 0;
+}
+.form__input {
+    background-color: antiquewhite;
+}
+.post {
+    display: flex;
+    column-gap: 10px;
+    padding: 10px 0;
+    justify-content: space-between;
+    width: 100%;
+}
+.post:not(:last-child) {
+    border-bottom: 2px solid rgba(146, 145, 145, 0.658);
+}
+.post__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.post__text {
+    margin-bottom: 10px;
+}
+.post__like {
+    background-color: #447094;
+    padding: 3px;
+    color: white;
+}
+.post__delete{
+    align-self: start;
+    background-color: #1b5a8d;
+    color: white;
+    padding: 5px 10px;
+}
 .footer{
     width: 100%;
     background-color: rgba(88, 130, 162, 0.62);
