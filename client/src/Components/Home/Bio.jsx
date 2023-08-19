@@ -2,9 +2,10 @@ import defAvatar from '../../assets/avatar.webp'
 import {useState} from "react";
 import {Formik} from "formik";
 import {useDispatch} from "react-redux";
-import {updateUserData} from "../../redux/user-reducer";
+import {updateUserData, uploadAvatar} from "../../redux/user-reducer";
+import {API_URL} from "../../config";
 
-const Bio = ({avatar, status, username, id, fullname}) => {
+const Bio = ({avatar, status, username, id, fullname, isOwner}) => {
 
     const [editMode, setEditMode] = useState(false)
     const dispatch = useDispatch();
@@ -14,16 +15,23 @@ const Bio = ({avatar, status, username, id, fullname}) => {
     return (
             <div className="home__bio bio">
                 <div className='bio__photo'>
-                    <img src={avatar|| defAvatar}
+                    <img src={avatar?`${API_URL}${avatar}`:defAvatar}
                          className="bio__avatar"/>
-                    <input className="bio__avatar-edit" placeholder='value' type="file"/>
+                    {isOwner && <input className="bio__avatar-edit" placeholder='value' onChange={(e)=> {
+                        dispatch(uploadAvatar(e.target.files[0]))
+                    }} type="file"/>}
                 </div>
-                {editMode?<BioDescriptionForm fullname={fullname} saveNewProfileData={saveNewProfileData} avatar={avatar} status={status} username={username} setEditMode={setEditMode}/>:<BioDescription  avatar={avatar} fullname={fullname} status={status} username={username} setEditMode={setEditMode}/>}
+                {editMode?
+                        <BioDescriptionForm fullname={fullname} saveNewProfileData={saveNewProfileData} avatar={avatar}
+                                            status={status} username={username} setEditMode={setEditMode}/> :
+                        <BioDescription isOwner={isOwner} avatar={avatar} fullname={fullname} status={status} username={username}
+                                        setEditMode={setEditMode}/>
+                }
             </div>
     );
 }
 
-const BioDescription = ({status, username, fullname, setEditMode})=>{
+const BioDescription = ({status, username, fullname, setEditMode, isOwner})=>{
 
     return <div className="bio__description description">
         <div className="description__name">{fullname || "User"}</div>
@@ -36,7 +44,7 @@ const BioDescription = ({status, username, fullname, setEditMode})=>{
                 <span className="description__categories">Username: </span>
                 {username || "Something about me"}
             </div>
-            <button onClick={()=>setEditMode(true)}>Edit</button>
+            {isOwner && <button onClick={() => setEditMode(true)}>Edit</button>}
         </div>
     </div>
 }

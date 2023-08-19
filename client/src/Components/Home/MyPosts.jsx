@@ -2,10 +2,10 @@ import {Field, Formik} from "formik";
 import React from "react";
 import Post from "./Post";
 import {useDispatch} from "react-redux";
-import {addPost} from "../../redux/user-reducer";
+import {addPost} from "../../redux/post-reducer";
 
 
-function MyPosts({user}) {
+function MyPosts({user, posts, isOwner}) {
 
     const dispatch = useDispatch()
 
@@ -14,10 +14,11 @@ function MyPosts({user}) {
     }
 
     return <div className="home__posts posts">
-        <NewPostForm onAddPost={onAddPost}/>
-        <h2 className="posts__title">My posts</h2>
-        {user.posts?.map((post) => (
-            <Post key={post._id} post={post}/>
+
+        {isOwner && <NewPostForm onAddPost={onAddPost}/>}
+        <h2 className="posts__title">Posts</h2>
+        {posts?.map((post) => (
+            <Post isOwner={isOwner} key={post._id} post={post} avatar={user.avatar} userId={user.id}/>
         ))}
     </div>
 }

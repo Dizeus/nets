@@ -2,9 +2,13 @@ import {applyMiddleware, combineReducers, compose, legacy_createStore as createS
 
 import reduxMiddlewear from "redux-thunk";
 import userReducer from "./user-reducer";
+import postReducer from "./post-reducer";
+import friendReducer from "./friend-reducer";
 
 const reducers = combineReducers({
-    user: userReducer
+    user: userReducer,
+    post: postReducer,
+    friend: friendReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

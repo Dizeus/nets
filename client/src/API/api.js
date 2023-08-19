@@ -1,7 +1,8 @@
 import axios from "axios";
+import {API_URL} from "../config";
 
 const base = axios.create({
-    baseURL:`http://localhost:8000/`,
+    baseURL:API_URL,
 })
 
 export const api = {
@@ -36,8 +37,15 @@ export const api = {
             console.log(err.response.data.message)
         }
     },
+    async getProfile(id){
+        try{
+            const response = await base.get(`api/user/${id}`)
+            return response
+        }catch (err){
+            console.log(err.response.data.message)
+        }
+    },
     async addPost(text, author){
-        console.log("api add post", author)
         try{
             return await base.post('api/posts', {text, author})
         }catch (err){
@@ -46,14 +54,14 @@ export const api = {
     },
     async getPosts(id){
         try{
-            return await base.get('api/posts', {headers:{id}})
+            return await base.get(`api/posts/${id}`)
         }catch (err){
             alert(err.response.data.message)
         }
     },
-    async like(id){
+    async like(id, userId){
         try{
-            return await base.put(`api/posts/like/${id}`)
+            return await base.put(`api/posts/like/${id}`, {userId})
         }catch (err){
             alert(err.response.data.message)
         }
@@ -72,6 +80,23 @@ export const api = {
             alert(err.response.data.message)
         }
     },
+    async followUnfollow(id, isFollow){
+        try {
+            return await base.put(`api/friends/${id}`, {isFollow} ,{headers:{Authorization: `Bearer ${localStorage.getItem('token')}`}})
+        }catch (err){
+            alert(err.response.data.message)
+        }
+    },
+    async uploadAvatar(file){
+        try{
+            const formData = new FormData();
+            formData.append("file", file)
+            return await base.post(`api/user/avatar`, formData, {headers:{Authorization: `Bearer ${localStorage.getItem('token')}`}})
+        }catch (err){
+            alert(err.response.data.message)
+        }
+    },
+
 
 }
 

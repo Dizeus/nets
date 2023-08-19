@@ -1,5 +1,6 @@
 import {NavLink} from "react-router-dom";
 import defAvatar from '../../assets/avatar.webp'
+import {API_URL} from "../../config";
 function Header({fullname, email, isAuth, avatar, logout}){
     return (
         <header className="header">
@@ -119,7 +120,7 @@ function Header({fullname, email, isAuth, avatar, logout}){
                 {isAuth?
                     <div className="header__profile">
                         <div className='header__profile-content'>
-                            <img className='header__profile-image' src={avatar?avatar:defAvatar} alt=""/>
+                            <img className='header__profile-image' src={avatar?`${API_URL}${avatar}`:defAvatar} alt=""/>
                             <div className='header__profile-username'>{fullname}</div>
                         </div>
                         <button className='header__logout' onClick={()=>logout()}>logout</button>

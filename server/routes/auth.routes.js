@@ -77,9 +77,10 @@ router.post('/login',  async (req,res)=>{
     try {
         const user = await User.findOne({_id: req.user.id})
         const token = jwt.sign({id: user.id}, 'secret', { expiresIn: '1hr' })
+        console.log(user)
         return res.json({
             token,
-            user:{
+            user: {
                 id: user.id,
                 email: user.email,
                 username: user.username,

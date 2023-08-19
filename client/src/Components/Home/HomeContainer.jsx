@@ -1,24 +1,39 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {connect} from "react-redux";
-import {useParams} from 'react-router-dom';
 import {compose} from "redux";
 import {withAuthNavigate} from "../../HOC/withAuthNavigate";
 import Home from "./Home";
+import {withRouter} from "../../HOC/withRouter";
+import {getPosts} from "../../redux/post-reducer";
+import {getProfile} from "../../redux/friend-reducer";
 
-const HomeContainer = (props)=>{
-    return <Home {...props}/>
-}
 
-export function withRouter(Children){
-    return(props)=>{
-        const match  = {params: useParams()};
-        return <Children {...props}  match = {match}/>
+
+const HomeContainer = (props) => {
+
+    const isOwner= !props.match.params.userId
+
+    const initializeApp = () =>{
+        if(!isOwner) {
+            props.getProfile(props.match.params.userId)
+        }
+
     }
+    useEffect(()=>initializeApp,[])
+
+
+    return isOwner?<Home user={props.user} posts={props.posts} isOwner={isOwner}/>:<Home user={props.friendProfile} posts={props.friendPosts} isOwner={isOwner}/>
 }
-let mapStateToProps = (state) => ({
+
+
+const mapStateToProps = (state) => ({
     user: state.user.data,
+    posts: state.post.posts,
+    friendProfile: state.friend.friendProfile,
+    friendPosts: state.friend.friendPosts
 })
 export default compose(
-    connect(mapStateToProps,{}),
+    connect(mapStateToProps,{getProfile, getPosts}),
     withAuthNavigate,
+    withRouter,
     )(HomeContainer);
