@@ -8,6 +8,7 @@ const User = new Schema({
     status: {type: String},
     avatar: {type: String},
     friends: [{type: ObjectId, ref: 'User'}],
+    conversations: [{convId: {type: ObjectId, ref: 'Conversation'}, userId: {type: ObjectId, ref: 'User'}}]
 
 })
 

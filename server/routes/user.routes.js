@@ -66,5 +66,20 @@ router.post('/avatar', authMiddlewear, async (req,res)=>{
     }
 })
 
+router.get('/message/:id', async (req,res)=>{
+    try {
+        const user = await User.findOne({_id: req.params.id})
+        return res.json({
+            user:{
+                id: user._id,
+                avatar: user.avatar,
+                fullname: user.fullname
+            }})
+    }catch (err){
+        console.log(err)
+        res.send({message: "Server error profile"})
+    }
+})
+
 
 module.exports = router

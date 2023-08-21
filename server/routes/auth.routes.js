@@ -20,10 +20,9 @@ router.post('/signup',
         }
         const {email, password, fullname} = req.body
 
-        console.log(email, password, fullname)
 
         const isUserExist = await User.findOne({email})
-        console.log(isUserExist)
+
         if(isUserExist){
             return res.status(400).json({message: `User with email ${email} already exist`})
         }
@@ -66,7 +65,8 @@ router.post('/login',  async (req,res)=>{
                 avatar: user.avatar,
                 friends: user.friends,
                 posts: user.posts,
-                fullname: user.fullname
+                fullname: user.fullname,
+                conversations: user.conversations
             }})
     }catch (err){
         console.log(err)
@@ -77,7 +77,6 @@ router.post('/login',  async (req,res)=>{
     try {
         const user = await User.findOne({_id: req.user.id})
         const token = jwt.sign({id: user.id}, 'secret', { expiresIn: '1hr' })
-        console.log(user)
         return res.json({
             token,
             user: {
@@ -88,7 +87,8 @@ router.post('/login',  async (req,res)=>{
                 avatar: user.avatar,
                 friends: user.friends,
                 posts: user.posts,
-                fullname: user.fullname
+                fullname: user.fullname,
+                conversations: user.conversations,
             }})
     }catch (err){
         console.log(err)
