@@ -1,15 +1,28 @@
 import {api} from "../API/api";
 import {getPosts} from "./post-reducer";
+import conversation from "../Components/Messages/Conversation";
+import {getMessageProfiles} from "./messages-reducer";
 
 const SET_USER = "SET_USER";
 const SET_AVATAR = "SET_AVATAR";
 const LOGOUT = "LOGOUT"
-
+const ADD_FRIEND = "ADD_FRIEND";
+const REMOVE_FRIEND = "REMOVE_FRIEND";
+const SET_CONVERSATION = "SET_CONVERSATION"
 
 const initialState = {
-    data: {},
+    data: {
+        email: null,
+        password: null,
+        fullname: null,
+        username: null,
+        status: null,
+        avatar: null,
+        friends: [],
+        conversations: []
+    },
     token: null,
-    isAuth: false
+    isAuth: false,
 };
 function userReducer(state = initialState, action){
     switch (action.type) {
@@ -31,19 +44,36 @@ function userReducer(state = initialState, action){
                 ...state,
                 data: {...state.data, avatar: action.payload}
             }
+        case ADD_FRIEND:
+            return {
+                ...state,
+                data: {...state.data, friends: [...state.data.friends, action.payload]}
+            }
+        case REMOVE_FRIEND:
+            return {
+                ...state,
+                data: {...state.data, friends: [...state.data.friends.filter(x=>x!=action.payload)]}
+            }
+        case SET_CONVERSATION:
+            return {
+                ...state,
+                data: {...state.data, conversations: [state.data.conversations?.filter(conv=>conv.id!=action.payload.convId), action.payload]}
+            }
         default:
             return state;
     }
 }
 export const setUser = (user) => ({ type: SET_USER, payload: user});
+export const addConversation = (conversation) => ({ type: SET_CONVERSATION, payload: conversation});
+
 export const logout = ()=>({ type: LOGOUT})
-
 export const setAvatar = (avatar) => ({ type: SET_AVATAR, payload: avatar});
-
+export const addFriend = (id) => ({ type: ADD_FRIEND, payload: id});
+export const removeFriend = (id) => ({ type: REMOVE_FRIEND, payload: id});
 
 export const login = (email, password) => async (dispatch)=>{
      const response = await api.login(email, password)
-     if(response.status === 200){
+     if(response?.status === 200){
         dispatch(setUser(response.data.user))
         localStorage.setItem('token', response.data.token)
          dispatch(getPosts(response.data.user.id, true))
@@ -55,6 +85,7 @@ export const auth = () => async (dispatch)=>{
          localStorage.setItem('token', response.data.token)
          dispatch(setUser(response.data.user))
          dispatch(getPosts(response.data.user.id, true))
+         dispatch(getMessageProfiles(response.data.user.conversations))
      }else {
          localStorage.removeItem('token')
      }
@@ -71,6 +102,17 @@ export const uploadAvatar = (file) => async (dispatch) =>{
     const res = await api.uploadAvatar(file);
     if(res.status == 200)
         dispatch(setAvatar(res.data.user.avatar))
+}
+
+export const followUnfollow = (id, isFollow) => async (dispatch) =>{
+    const res = await api.followUnfollow(id, isFollow)
+    if(res.status == 200) {
+        isFollow? dispatch(addFriend(id)): dispatch(removeFriend(id));
+    }
+}
+
+export const addUserConversation = (convId, userId) => (dispatch) =>{
+    dispatch(addConversation({convId, userId}))
 }
 
 export default userReducer;

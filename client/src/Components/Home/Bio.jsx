@@ -2,10 +2,11 @@ import defAvatar from '../../assets/avatar.webp'
 import {useState} from "react";
 import {Formik} from "formik";
 import {useDispatch} from "react-redux";
-import {updateUserData, uploadAvatar} from "../../redux/user-reducer";
+import {followUnfollow, updateUserData, uploadAvatar} from "../../redux/user-reducer";
 import {API_URL} from "../../config";
+import {NavLink} from "react-router-dom";
 
-const Bio = ({avatar, status, username, id, fullname, isOwner}) => {
+const Bio = ({avatar, status, username, id, fullname, isOwner, mainUser}) => {
 
     const [editMode, setEditMode] = useState(false)
     const dispatch = useDispatch();
@@ -27,6 +28,15 @@ const Bio = ({avatar, status, username, id, fullname, isOwner}) => {
                         <BioDescription isOwner={isOwner} avatar={avatar} fullname={fullname} status={status} username={username}
                                         setEditMode={setEditMode}/>
                 }
+                {!isOwner &&
+                    <div style={{display: 'flex', columnGap: '10px'}}>
+                        <NavLink to={"/messages/"+ id}><button>Send message</button></NavLink>
+                        {mainUser.friends.includes(id) ?
+                            <button className="user__follow"
+                                    onClick={() => dispatch(followUnfollow(id, false))}>unfollow</button> :
+                            <button className="user__follow"
+                                    onClick={() => dispatch(followUnfollow(id, true))}> follow</button>}
+                    </div>}
             </div>
     );
 }

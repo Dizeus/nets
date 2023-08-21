@@ -18,7 +18,7 @@ export const api = {
         try{
             return await base.get('api/auth/auth', {headers:{Authorization: `Bearer ${localStorage.getItem('token')}`}})
         }catch (err){
-
+            console.error(err)
         }
     },
     async signup(email, password, fullname){
@@ -96,7 +96,30 @@ export const api = {
             alert(err.response.data.message)
         }
     },
+    async getConversation(id){
+        try{
+            return await base.get(`api/messages/${id}`, {headers:{Authorization: `Bearer ${localStorage.getItem('token')}`}})
+        }catch (err){
+            alert(err.response.data.message)
+        }
+    },
+    async getMessageProfiles(id){
+        try{
 
+            const response = await base.get(`api/user/message/${id}`)
+            return response
+        }catch (err){
+            console.log(err.response.data.message)
+        }
+    },
+    async sendMessage(message, convId){
+        try{
+            const response = await base.put(`api/messages/`, {message, convId}, {headers:{Authorization: `Bearer ${localStorage.getItem('token')}`}})
+            return response
+        }catch (err){
+            console.log(err.response.data.message)
+        }
+    },
 
 }
 

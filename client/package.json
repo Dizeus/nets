@@ -8,6 +8,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
+    "eslint-config-airbnb": "^19.0.4",
     "formik": "^2.4.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -30,6 +31,17 @@
       "react-app/jest"
     ]
   },
+  "husky": {
+      "hooks": {
+        "pre-commit": "lint-staged"
+      }
+    },
+  "lint-staged": {
+    "**/*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -41,5 +53,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^8.47.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1"
   }
 }

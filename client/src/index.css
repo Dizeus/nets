@@ -291,6 +291,51 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
     flex-direction: column;
     row-gap: 10px;
 }
+.messages{
+    display: flex;
+    height: 100%;
+}
+
+.messages__list{
+    flex: 0 0 20%
+}
+.messages__conversation{
+    flex: 1 1 80%;
+}
+
+.messages__profile {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    column-gap: 15px;
+    border-bottom: 1px solid #447094;
+}
+
+.messages__profile-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.messages__profile-name {
+}
+.conversation{
+    display: flex;
+    flex-direction: column;
+
+}
+.conversation__header{
+    flex: 0 1 30px;
+    background-color: #1b5a8d;
+}
+.conversation__content{
+    flex: 1 0 auto;
+    background-color: antiquewhite;
+}
+.conversation__message{
+    flex: 0 1 30px;
+    background-color: #1b5a8d;
+}
 
 .footer{
     width: 100%;

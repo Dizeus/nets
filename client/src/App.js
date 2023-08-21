@@ -7,6 +7,7 @@ import Login from "./Components/Login/Login";
 import {useDispatch} from "react-redux";
 import {auth} from "./redux/user-reducer";
 import FriendsContainer from "./Components/Friends/FriendsContainer";
+import MessagesContainer from "./Components/Messages/MessagesContainer";
 
 function App() {
     const isAuth = true;
@@ -26,7 +27,8 @@ function App() {
                     <Routes>
                         <Route path="/home/:userId?" element={<HomeContainer/>}/>
                         <Route path="/friends" element={<FriendsContainer />} />
-                        {/*<Route path="/messages/*" element={<Messages/>}/>
+                        <Route path="/messages/:receiver?" element={<MessagesContainer/>}/>
+                        {/*
                         <Route path="/comunities" element={<Communities />} />
 
                         <Route path="/games" element={<Games />} />

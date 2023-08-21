@@ -4,7 +4,8 @@ import React, {useEffect, useState} from "react";
 import {compose} from "redux";
 import {withAuthNavigate} from "../../HOC/withAuthNavigate";
 import friends from "./Friends";
-import {followUnfollow, getPeople} from "../../redux/friend-reducer";
+import {getPeople} from "../../redux/friend-reducer";
+import {followUnfollow} from "../../redux/user-reducer";
 
 const FriendsContainer = ({people,friends, getPeople, followUnfollow}) => {
 
