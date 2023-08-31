@@ -1,47 +1,111 @@
+.light {
+  --mainBackground: #F8F8F7;
+  --mainBackgroundTransparent: #F8F8F7;
+  --lightBackground: #FFF;
+  --lightBackgroundToBlack: #FFF;
+  --coral: #FF868E;
+  --lightCoral: #FBE0DC;
+  --lightCoralTransparent: #FBE0DC;
+  --black: #1D1D1D;
+  --grey: #8C8C8C;
+}
+
+.dark {
+  --mainBackground: #1D1D1D;
+  --mainBackgroundTransparent: #282828;
+  --lightBackground: rgba(255,255,255,0.1);
+  --lightBackgroundToBlack: #282828;
+  --coral: #FF868E;
+  --lightCoral: rgba(255,255,255,0.05);
+  --lightCoralTransparent: rgba(255, 134, 142, 0.2);
+  --black: #FFF;
+  --grey: #8C8C8C;
+}
+
+.posts__title {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.posts__form {
+  display: flex;
+  flex-direction: column;
+  max-width: 60%;
+  row-gap: 10px;
+  margin: 0 0 10px 0;
+}
+.posts__input {
+  background-color: rgba(140, 140, 159, 0.15);
+  padding: 10px;
+  font-size: 16px;
+}
+.posts__button {
+  margin-top: 10px;
+  padding: 5px;
+  background-color: #447094;
+  color: #F8F8F7;
+  width: 150px;
+  margin-bottom: 20px;
+}
+
 .post {
   display: flex;
-  column-gap: 10px;
-  padding: 10px 0;
-  justify-content: space-between;
+  column-gap: 20px;
+  padding: 20px 0 10px 0;
   width: 100%;
 }
 .post:not(:last-child) {
   border-bottom: 2px solid rgba(146, 145, 145, 0.658);
+}
+.post__author {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+.post__date {
+  font-size: 12px;
+  color: #7c7b7b;
+  font-weight: 400;
+}
+.post__date:before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  display: inline-block;
+  background-color: darkgray;
+  border-radius: 50%;
+  margin: 2px 5px;
 }
 .post__avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
-.post__title {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
 .post__text {
   margin-bottom: 10px;
 }
 .post__like {
+  background-color: transparent;
+  padding: 3px 5px;
+  font-size: 18px;
+  color: #447094;
+  transition: all 0.3s ease 0s;
+}
+.post__like:hover {
   background-color: #447094;
-  padding: 3px;
-  color: white;
+  color: #ffffff;
 }
 .post__delete {
-  align-self: start;
-  background-color: #1b5a8d;
-  color: white;
+  background-color: transparent;
+  color: #447094;
+  font-size: 18px;
   padding: 5px 10px;
+  margin-left: 15px;
+  transition: all 0.3s ease 0s;
 }
-
-.form {
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
-  margin: 0 0 10px 0;
-}
-
-.form__input {
-  background-color: antiquewhite;
+.post__delete:hover {
+  background-color: #447094;
+  color: #ffffff;
 }
 
 /*# sourceMappingURL=MyPosts.css.map */

@@ -18,16 +18,13 @@ function MyPosts({user, posts, isOwner}) {
         {isOwner && <NewPostForm onAddPost={onAddPost}/>}
         <h2 className="posts__title">Posts</h2>
         {posts?.map((post) => (
-            <Post isOwner={isOwner} key={post._id} post={post} avatar={user.avatar} userId={user.id}/>
+            <Post fullname={user.fullname} isOwner={isOwner} key={post._id} post={post} avatar={user.avatar} userId={user.id}/>
         ))}
     </div>
 }
 
 
-let NewPostForm = ({onAddPost}) =>{
-
-
-
+const NewPostForm = ({onAddPost}) =>{
     return <Formik
         initialValues={{ newPostText: ''}}
         validate={values => {
@@ -56,19 +53,19 @@ let NewPostForm = ({onAddPost}) =>{
               isSubmitting,
               /* and other goodies */
           }) => (
-            <form className="posts__form form" onSubmit={handleSubmit}>
-                <label className="form__title">New post</label>
+            <form className="posts__form" onSubmit={handleSubmit}>
+                <label className="posts__title">New post</label>
                 <Field
                     as="textarea"
                     name="newPostText"
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.newPostText}
-                    className="form__input"
+                    className="posts__input"
                     placeholder="What do you think about?"
                 />
                 {errors.newPostText && touched.newPostText && errors.newPostText}
-                <button className="form__btn" type="submit" disabled={isSubmitting}>
+                <button className="posts__button" type="submit" disabled={isSubmitting}>
                     Add post
                 </button>
             </form>

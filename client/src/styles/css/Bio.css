@@ -1,52 +1,107 @@
+.light {
+  --mainBackground: #F8F8F7;
+  --mainBackgroundTransparent: #F8F8F7;
+  --lightBackground: #FFF;
+  --lightBackgroundToBlack: #FFF;
+  --coral: #FF868E;
+  --lightCoral: #FBE0DC;
+  --lightCoralTransparent: #FBE0DC;
+  --black: #1D1D1D;
+  --grey: #8C8C8C;
+}
+
+.dark {
+  --mainBackground: #1D1D1D;
+  --mainBackgroundTransparent: #282828;
+  --lightBackground: rgba(255,255,255,0.1);
+  --lightBackgroundToBlack: #282828;
+  --coral: #FF868E;
+  --lightCoral: rgba(255,255,255,0.05);
+  --lightCoralTransparent: rgba(255, 134, 142, 0.2);
+  --black: #FFF;
+  --grey: #8C8C8C;
+}
+
 .bio {
   display: flex;
   column-gap: 50px;
   margin: 0 0 20px 0;
 }
-.bio__avatar-edit {
-  max-width: 60px;
-  display: block;
-}
 .bio__photo {
-  overflow: visible;
+  max-width: 200px;
+  height: 200px;
+  position: relative;
+  -webkit-box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  overflow: hidden;
+  border: 10px solid #fff;
+}
+.bio__avatar-button {
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  position: absolute;
+  bottom: 15px;
+  right: 25px;
+  border-radius: 50%;
+  color: #F8F8F7;
+  background-color: #1b5a8d;
+  transition: all 0.3s ease 0s;
+  border: 1px solid #F8F8F7;
+  z-index: 2;
+}
+.bio__avatar-button p {
+  margin-top: -2px;
+}
+.bio__avatar-button:hover {
+  background-color: #F8F8F7;
+  color: #1b5a8d;
 }
 .bio__avatar {
-  max-width: 60px;
-  flex: 1 0 60px;
-  align-self: flex-start;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .bio__description {
   flex: 0 1 auto;
+  padding: 30px 0 0 0;
 }
 
 .description {
-  font-size: 12px;
+  font-size: 16px;
 }
 .description__name {
   font-weight: 700;
-  font-family: sans-serif;
+  font-size: 20px;
+  color: #1b5a8d;
   margin: 0 0 10px 0;
 }
 .description__info {
   display: flex;
   flex-direction: column;
-  row-gap: 5px;
+  row-gap: 10px;
 }
 .description__info div {
   padding: 0 0 5px 0;
   border-bottom: 1px solid rgb(201, 199, 199);
 }
-.description__status-input {
-  background-color: #8ac5e7;
-  color: white;
-  padding: 8px;
-  border-radius: 3px;
+.description__input {
+  background-color: #ffffff;
+  color: #1D1D1D;
+  padding: 5px 10px;
 }
 .description__categories {
-  font-family: Monospace;
-  font-size: 12px;
-  font-weight: 700;
-  color: rgb(169, 168, 168);
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: rgb(103, 103, 112);
+}
+.description__button {
+  margin-top: 10px;
+  padding: 5px;
+  background-color: #447094;
+  color: #F8F8F7;
 }
 
 /*# sourceMappingURL=Bio.css.map */

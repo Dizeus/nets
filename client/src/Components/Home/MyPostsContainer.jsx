@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 
 
 const mapStateToProps = (state)=>({
-        posts: state.content.home.posts
+        posts: state.content.home.posts,
 })
 
 const MyPostsContainer = connect(mapStateToProps, )(MyPosts);
