@@ -1,6 +1,6 @@
 import React from "react";
 import Friend from "./Friend";
-import {followUnfollow} from "../../redux/user-reducer";
+import '../../styles/css/Friends.css'
 const Friends = ({people, friends, followUnfollow})=>{
     return <div className="friends">
         {people.map(user => {

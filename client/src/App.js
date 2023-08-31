@@ -10,9 +10,7 @@ import FriendsContainer from "./Components/Friends/FriendsContainer";
 import MessagesContainer from "./Components/Messages/MessagesContainer";
 
 function App() {
-    const isAuth = true;
     const dispatch = useDispatch()
-
     const initializeApp = () =>{
         dispatch(auth())
     }
@@ -39,7 +37,7 @@ function App() {
                 </Suspense>
             </main>
         </div>
-      <footer className='footer'>&copy Copyright 2023</footer>
+      <footer className='footer'>&copy; Copyright 2023</footer>
     </div>
   );
 }

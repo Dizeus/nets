@@ -1,0 +1,45 @@
+@import "variables";
+
+.header {
+  width: 100%;
+  background-color: $blue;
+  height: 70px;
+  &__container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__logo {
+    margin-top: -10px;
+  }
+  &__profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 15px;
+  }
+  &__profile-content {
+    color: #F8F8F7;
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+  &__profile-username {
+      color: #a7bdd5;
+
+    }
+  &__profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  &__logout {
+    background-color: transparent;
+    color: #bad5eb;
+    padding: 10px;
+    border-radius: 5px;
+
+  }
+}

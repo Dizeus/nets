@@ -3,6 +3,7 @@ import {login, signup} from "../../redux/user-reducer";
 import {connect} from "react-redux";
 import {Navigate} from "react-router-dom";
 import React, {useState} from "react";
+import '../../styles/css/Login.css'
 function Login({isAuth, login, signup}){
 
     const [isLoginForm, setIsLoginForm] = useState(true)
@@ -10,10 +11,9 @@ function Login({isAuth, login, signup}){
     return isAuth?
         <Navigate to="/home" replace={true}/>:
         (
-            <div>
-                <div className="auth-container">
-                    <div className="auth-container-box">
-                        <Formik
+            <div className="auth">
+                <div className="auth__container">
+                    <Formik
                             initialValues={{ email: '', fullname: '', password: '', confirmPassword: '',}}
                             validate={values => {
                                 const errors = {};
@@ -50,7 +50,7 @@ function Login({isAuth, login, signup}){
                                     <input
                                         type="email"
                                         name="email"
-                                        className='auth-input'
+                                        className='auth__input'
                                         onChange={handleChange}
                                         onBlur={handleBlur}
                                         value={values.email}
@@ -60,7 +60,7 @@ function Login({isAuth, login, signup}){
                                     {!isLoginForm && <><div>Fullname</div> <input
                                         type="text"
                                         name="fullname"
-                                        className='auth-input'
+                                        className='auth__input'
                                         onChange={handleChange}
                                         onBlur={handleBlur}
                                         value={values.fullname}
@@ -70,7 +70,7 @@ function Login({isAuth, login, signup}){
                                     <input
                                         type="password"
                                         name="password"
-                                        className='auth-input'
+                                        className='auth__input'
                                         onChange={handleChange}
                                         onBlur={handleBlur}
                                         value={values.password}
@@ -78,7 +78,7 @@ function Login({isAuth, login, signup}){
                                     />
                                     {errors.password && touched.password && errors.password}
                                     {!isLoginForm && <input
-                                        className='auth-input'
+                                        className='auth__input'
                                         required
                                         type="password"
                                         name='confirmPassword'
@@ -88,11 +88,11 @@ function Login({isAuth, login, signup}){
                                         onChange={handleChange}
                                     />}
                                     {status && <div>{status.error}</div>       }
-                                    <input type="submit" className="auth-submit" disabled={isSubmitting}/>
+                                    <input type="submit" className="auth__submit" disabled={isSubmitting}/>
                                 </form>
                             )}
                         </Formik>
-                        <div className="auth-options">
+                        <div className="auth__options">
                             <button
                                 onClick={() => setIsLoginForm(false)}
                                 style={{backgroundColor : !isLoginForm ? 'rgb(255, 255, 255)' : 'rgb(188, 188, 188)'}}
@@ -103,7 +103,6 @@ function Login({isAuth, login, signup}){
                             >Login</button>
                         </div>
                     </div>
-                </div>
             </div>
         );
 }

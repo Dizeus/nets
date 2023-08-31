@@ -5,7 +5,7 @@ import {useDispatch} from "react-redux";
 import {followUnfollow, updateUserData, uploadAvatar} from "../../redux/user-reducer";
 import {API_URL} from "../../config";
 import {NavLink} from "react-router-dom";
-
+import '../../styles/css/Bio.css'
 const Bio = ({avatar, status, username, id, fullname, isOwner, mainUser}) => {
 
     const [editMode, setEditMode] = useState(false)

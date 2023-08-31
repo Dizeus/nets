@@ -1,0 +1,67 @@
+.light {
+  --mainBackground: #F8F8F7;
+  --mainBackgroundTransparent: #F8F8F7;
+  --lightBackground: #FFF;
+  --lightBackgroundToBlack: #FFF;
+  --coral: #FF868E;
+  --lightCoral: #FBE0DC;
+  --lightCoralTransparent: #FBE0DC;
+  --black: #1D1D1D;
+  --grey: #8C8C8C;
+}
+
+.dark {
+  --mainBackground: #1D1D1D;
+  --mainBackgroundTransparent: #282828;
+  --lightBackground: rgba(255,255,255,0.1);
+  --lightBackgroundToBlack: #282828;
+  --coral: #FF868E;
+  --lightCoral: rgba(255,255,255,0.05);
+  --lightCoralTransparent: rgba(255, 134, 142, 0.2);
+  --black: #FFF;
+  --grey: #8C8C8C;
+}
+
+.header {
+  width: 100%;
+  background-color: #447094;
+  height: 70px;
+}
+.header__container {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__logo {
+  margin-top: -10px;
+}
+.header__profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 15px;
+}
+.header__profile-content {
+  color: #F8F8F7;
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.header__profile-username {
+  color: #a7bdd5;
+}
+.header__profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.header__logout {
+  background-color: transparent;
+  color: #bad5eb;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/*# sourceMappingURL=Header.css.map */

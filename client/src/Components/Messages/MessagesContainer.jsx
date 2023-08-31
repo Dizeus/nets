@@ -7,10 +7,7 @@ import MessagesList from "./MessagesList";
 import Conversation from "./Conversation";
 import {getConversation, getMessageProfiles, sendMessage} from "../../redux/messages-reducer";
 import usePrevious from "../../Hook/usePrevious";
-
-
-
-
+import '../../styles/css/Messages.css'
 const MessagesContainer = (props) => {
 
 
@@ -23,7 +20,7 @@ const MessagesContainer = (props) => {
 
     return (<div className='messages'>
                 <MessagesList messageProfiles={props.messageProfiles} conversations={props.conversations}/>
-                {receiverId != undefined?<Conversation sendMessage={props.sendMessage} conversationInfo={props.conversationInfo}/>:<div>Choose conversation</div>}
+                {receiverId != undefined?<Conversation profile={props.profile} sendMessage={props.sendMessage} conversationInfo={props.conversationInfo}/>:<div>Choose conversation</div>}
             </div>)
 }
 
@@ -31,7 +28,8 @@ const MessagesContainer = (props) => {
 const mapStateToProps = (state) => ({
     conversations: state.user.data.conversations,
     messageProfiles: state.messages.messageProfiles,
-    conversationInfo: state.messages.currConv
+    conversationInfo: state.messages.currConv,
+    profile: state.user.data
 
 })
 export default compose(

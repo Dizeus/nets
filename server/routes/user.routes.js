@@ -52,7 +52,6 @@ router.get('/:id', async (req,res)=>{
 
 router.post('/avatar', authMiddlewear, async (req,res)=>{
     try {
-        console.log(req.files)
         const file = req.files.file
         const user = await User.findOne({_id: req.user.id})
         const avatarName = uuid.v4() + '.jpg'

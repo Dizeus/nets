@@ -1,0 +1,45 @@
+.auth {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0 0 0;
+}
+.auth__container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  width: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.05) 0 6px 24px, rgba(0, 0, 0, 0.08) 0 0 0 1px;
+}
+.auth__container form {
+  display: flex;
+  flex-direction: column;
+  min-height: 350px;
+  padding: 20px;
+}
+.auth__input {
+  height: 30px;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #bee5ff;
+}
+.auth__options {
+  display: flex;
+}
+.auth__options button {
+  width: 50%;
+  border: none;
+  padding: 10px;
+  color: rgb(35, 38, 47);
+}
+.auth__submit {
+  color: #1a1a23;
+  background-color: #e1e1e1;
+  cursor: pointer;
+  height: 30px;
+  border-radius: 5px;
+}
+
+/*# sourceMappingURL=Login.css.map */

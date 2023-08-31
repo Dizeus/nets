@@ -8,7 +8,6 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
-    "eslint-config-airbnb": "^19.0.4",
     "formik": "^2.4.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -17,6 +16,7 @@
     "react-scripts": "5.0.1",
     "redux": "^4.2.1",
     "redux-thunk": "^2.4.2",
+    "sass": "^1.66.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -31,17 +31,6 @@
       "react-app/jest"
     ]
   },
-  "husky": {
-      "hooks": {
-        "pre-commit": "lint-staged"
-      }
-    },
-  "lint-staged": {
-    "**/*.js": [
-      "eslint --fix",
-      "git add"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -49,9 +38,9 @@
       "not op_mini all"
     ],
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "last 4 chrome version",
+      "last 4 firefox version",
+      "last 4 safari version"
     ]
   },
   "devDependencies": {

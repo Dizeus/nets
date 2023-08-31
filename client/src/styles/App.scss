@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "variables";
+/*--------------------------- nullstyles-------------------*/
+*{padding: 0;margin: 0;border: 0;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:16px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner{padding:0;border:0;}
+a,a:visited{text-decoration: none; color: inherit;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
+/*--------------------------------------------------------------*/
+
+body{
+  font-family: 'sans-serif', Jost;
+  background-color: $mainBackground;
+  color: black;
+}
+
+#root, .App{
+  min-height: 100vh;
+}
+.App{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.content{
+  display: flex;
+  flex: 1 0 auto;
+  min-height: 100%;
+}
+.main{
+  flex: 1 1 auto;
+}
+.footer{
+  width: 100%;
+  background-color: rgba(88, 130, 162, 0.62);
+  padding: 10px;
+  height: 40px;
+  text-align: center;
+  color: #ffffff;
+}
+
+[class*=__container] {
+  margin: 0 auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}

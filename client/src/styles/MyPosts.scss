@@ -1,0 +1,45 @@
+.post {
+  display: flex;
+  column-gap: 10px;
+  padding: 10px 0;
+  justify-content: space-between;
+  width: 100%;
+  &:not(:last-child) {
+    border-bottom: 2px solid rgba(146, 145, 145, 0.658);
+  }
+  &__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  &__title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  &__text {
+    margin-bottom: 10px;
+  }
+  &__like {
+    background-color: #447094;
+    padding: 3px;
+    color: white;
+  }
+  &__delete{
+    align-self: start;
+    background-color: #1b5a8d;
+    color: white;
+    padding: 5px 10px;
+  }
+
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  margin: 0 0 10px 0;
+}
+.form__input {
+  background-color: antiquewhite;
+}

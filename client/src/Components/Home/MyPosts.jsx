@@ -3,7 +3,7 @@ import React from "react";
 import Post from "./Post";
 import {useDispatch} from "react-redux";
 import {addPost} from "../../redux/post-reducer";
-
+import '../../styles/css/MyPosts.css'
 
 function MyPosts({user, posts, isOwner}) {
 

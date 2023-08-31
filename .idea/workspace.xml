@@ -6,25 +6,28 @@
   <component name="ChangeListManager">
     <list default="true" id="110222cf-ba27-4941-b92e-1eab90ccc533" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.eslintignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.eslintrc.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/API/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/API/api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Friends/FriendsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Friends/FriendsContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Friends/Friends.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Friends/Friends.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Header/HeaderContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Header/HeaderContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Components/Home/Bio.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Home/Bio.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Components/Home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Home/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Home/HomeContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Home/HomeContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/redux/friend-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/friend-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Home/MyPosts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Home/MyPosts.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Login/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Messages/Conversation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Messages/Conversation.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Messages/MessageProfile.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Messages/MessagesContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Messages/MessagesContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Sidebar/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Sidebar/Sidebar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/redux/messages-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/messages-reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/redux/user-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/user-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/auth.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/auth.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/message.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/message.routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/user.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/user.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,13 +63,15 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/web/react/itkama&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/AppData/Roaming/npm/sass.cmd&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;extract.css.actions.ExtractCSSConfigurable&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2023.1.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -107,7 +112,12 @@
       <workItem from="1692512343691" duration="6214000" />
       <workItem from="1692533586981" duration="5135000" />
       <workItem from="1692539420965" duration="3913000" />
-      <workItem from="1692612733088" duration="590000" />
+      <workItem from="1692612733088" duration="1425000" />
+      <workItem from="1692616573869" duration="14000" />
+      <workItem from="1693467083756" duration="3742000" />
+      <workItem from="1693470972275" duration="3135000" />
+      <workItem from="1693474847088" duration="392000" />
+      <workItem from="1693475662437" duration="4152000" />
     </task>
     <servers />
   </component>

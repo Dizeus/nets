@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import {API_URL} from "../../config";
 import defAvatar from "../../assets/avatar.webp";
 import {Formik} from "formik";
-const Conversation = ({conversationInfo, sendMessage}) => {
+const Conversation = ({conversationInfo, sendMessage, profile}) => {
 
 
     return <div className='messages__conversation conversation'>
@@ -11,7 +11,10 @@ const Conversation = ({conversationInfo, sendMessage}) => {
                     <div className="messages__profile-name">{conversationInfo.userInfo?.fullname}</div>
             </div>
                 <div className="conversation__content">
-                    {conversationInfo.conversation.messages?.map(message=><div>{message.text}</div>)}
+                    {conversationInfo.conversation.messages?.map(message=> {
+                           return message.author === profile.id? <div style={{float: 'right'}}>{message.text}</div>:<div style={{backgroundColor: 'skyblue'}}>{message.text}</div>
+                        }
+                    )}
                 </div>
         <Formik
             initialValues={{ message: ''}}

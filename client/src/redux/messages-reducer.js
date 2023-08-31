@@ -1,6 +1,4 @@
 import {api} from "../API/api";
-import conversation from "../Components/Messages/Conversation";
-import messageProfile from "../Components/Messages/MessageProfile";
 import {addConversation, addUserConversation} from "./user-reducer";
 
 const SET_CURR_CONV = "SET_CURR_CONV"

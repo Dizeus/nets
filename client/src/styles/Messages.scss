@@ -1,0 +1,44 @@
+.messages{
+  display: flex;
+  height: 100%;
+  &__list{
+    flex: 0 0 20%;
+  }
+  &__conversation{
+    flex: 1 1 80%;
+  }
+
+  &__profile {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    column-gap: 15px;
+    border-bottom: 1px solid #447094;
+  }
+
+  &__profile-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  &__profile-name {
+  }
+}
+
+.conversation{
+  display: flex;
+  flex-direction: column;
+  &__header{
+    flex: 0 1 30px;
+    background-color: #1b5a8d;
+  }
+  &__content{
+    flex: 1 0 auto;
+    background-color: antiquewhite;
+  }
+  &__message{
+    flex: 0 1 30px;
+    background-color: #1b5a8d;
+  }
+}

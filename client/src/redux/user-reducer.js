@@ -12,6 +12,7 @@ const SET_CONVERSATION = "SET_CONVERSATION"
 
 const initialState = {
     data: {
+        id: null,
         email: null,
         password: null,
         fullname: null,
