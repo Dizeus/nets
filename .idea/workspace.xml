@@ -6,19 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="110222cf-ba27-4941-b92e-1eab90ccc533" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Home/Bio.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Home/Bio.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Home/MyPosts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Home/MyPosts.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Home/MyPostsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Home/MyPostsContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Home/Post.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Home/Post.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/Bio.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Bio.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Home.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/MyPosts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/MyPosts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/css/Bio.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/css/Bio.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/css/Bio.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/css/Bio.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/css/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/css/Home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Messages/Conversation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Messages/Conversation.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Messages/MessagesContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Messages/MessagesContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/Messages.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Messages.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/css/Messages.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/css/Messages.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/css/Messages.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/css/Messages.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/styles/css/MyPosts.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/css/MyPosts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/css/MyPosts.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/css/MyPosts.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/styles/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/variables.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +35,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2TWQnvZ9zRF6K1FtBPsx8LTgn44" />
   <component name="ProjectLevelVcsManager">
@@ -109,7 +105,7 @@
       <workItem from="1693467083756" duration="3742000" />
       <workItem from="1693470972275" duration="3135000" />
       <workItem from="1693474847088" duration="392000" />
-      <workItem from="1693475662437" duration="11042000" />
+      <workItem from="1693475662437" duration="15940000" />
     </task>
     <servers />
   </component>

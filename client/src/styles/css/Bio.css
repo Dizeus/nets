@@ -68,6 +68,23 @@
   flex: 0 1 auto;
   padding: 30px 0 0 0;
 }
+.bio__guestButtons {
+  display: flex;
+  column-gap: 10px;
+}
+.bio__guestButton {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #447094;
+  color: #F8F8F7;
+  transition: all 0.3s ease 0s;
+  align-self: flex-start;
+}
+.bio__guestButton:hover {
+  background-color: #F8F8F7;
+  color: #447094;
+  border: 1px solid #447094;
+}
 
 .description {
   font-size: 16px;
@@ -102,6 +119,12 @@
   padding: 5px;
   background-color: #447094;
   color: #F8F8F7;
+  transition: all 0.3s ease 0s;
+}
+.description__button:hover {
+  background-color: #F8F8F7;
+  color: #447094;
+  border: 1px solid #447094;
 }
 
 /*# sourceMappingURL=Bio.css.map */

@@ -24,6 +24,12 @@
     color: #F8F8F7;
     width: 150px;
     margin-bottom: 20px;
+    transition: all 0.3s ease 0s;
+    &:hover{
+      background-color: #F8F8F7;
+      color: $blue;
+      border: 1px solid $blue;
+    }
   }
 }
 

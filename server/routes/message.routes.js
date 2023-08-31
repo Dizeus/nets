@@ -43,7 +43,8 @@ router.put('/', authMiddlewear,  async (req,res)=>{
         const conversation = await Conversation.findOne({_id: convId})
         conversation.messages.push({text: message, author: req.user.id})
         await conversation.save()
-        return res.json({message: "Successful send"})
+        const user = await User.findOne({_id: (conversation.part[0]==req.user.id?conversation.part[1]:conversation.part[0])})
+        return res.json({conversationInfo: {conversation: conversation, userInfo: {avatar: user.avatar, fullname: user.fullname}}})
     }catch (err){
         console.log(err)
         res.send({message: "Server error"})

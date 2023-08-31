@@ -20,7 +20,7 @@ const MessagesContainer = (props) => {
 
     return (<div className='messages'>
                 <MessagesList messageProfiles={props.messageProfiles} conversations={props.conversations}/>
-                {receiverId != undefined?<Conversation profile={props.profile} sendMessage={props.sendMessage} conversationInfo={props.conversationInfo}/>:<div>Choose conversation</div>}
+                {receiverId !== undefined && <Conversation profile={props.profile} sendMessage={props.sendMessage} conversationInfo={props.conversationInfo}/>}
             </div>)
 }
 

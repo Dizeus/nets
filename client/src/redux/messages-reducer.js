@@ -45,11 +45,9 @@ export const getConversation = (receiverId) => async (dispatch) =>{
     }
 }
 export const sendMessage = (message, convId) => async (dispatch) =>{
-    console.log('sendMessage')
     const res = await api.sendMessage(message, convId);
-    console.log(res)
     if(res.status == 200) {
-
+        dispatch(setCurrConv(res.data.conversationInfo))
     }
 }
 export default messagesReducer;

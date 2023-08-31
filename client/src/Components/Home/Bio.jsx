@@ -33,13 +33,13 @@ const Bio = ({avatar, status, username, id, fullname, isOwner, mainUser}) => {
                                         setEditMode={setEditMode}/>
                 }
                 {!isOwner &&
-                    <div style={{display: 'flex', columnGap: '10px'}}>
-                        <NavLink to={"/messages/"+ id}><button>Send message</button></NavLink>
+                    <div className='bio__guestButtons'>
+                        <NavLink to={"/messages/"+ id}><button className='bio__guestButton'>Send message</button></NavLink>
                         {mainUser.friends.includes(id) ?
-                            <button className="user__follow"
-                                    onClick={() => dispatch(followUnfollow(id, false))}>unfollow</button> :
-                            <button className="user__follow"
-                                    onClick={() => dispatch(followUnfollow(id, true))}> follow</button>}
+                            <button className='bio__guestButton'
+                                    onClick={() => dispatch(followUnfollow(id, false))}>Unfollow</button> :
+                            <button className='bio__guestButton'
+                                    onClick={() => dispatch(followUnfollow(id, true))}>Follow</button>}
                     </div>}
             </div>
     );

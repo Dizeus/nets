@@ -35,7 +35,7 @@
   margin: 0 0 10px 0;
 }
 .posts__input {
-  background-color: rgba(140, 140, 159, 0.15);
+  background-color: rgba(185, 194, 213, 0.42);
   padding: 10px;
   font-size: 16px;
 }
@@ -46,6 +46,12 @@
   color: #F8F8F7;
   width: 150px;
   margin-bottom: 20px;
+  transition: all 0.3s ease 0s;
+}
+.posts__button:hover {
+  background-color: #F8F8F7;
+  color: #447094;
+  border: 1px solid #447094;
 }
 
 .post {
