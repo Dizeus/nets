@@ -4,31 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="110222cf-ba27-4941-b92e-1eab90ccc533" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.eslintignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.eslintrc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Friends/Friends.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Friends/Friends.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Header/HeaderContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Header/HeaderContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Home/Bio.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Home/Bio.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Home/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Home/MyPosts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Home/MyPosts.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Login/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Messages/Conversation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Messages/Conversation.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Messages/MessageProfile.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Messages/MessagesContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Messages/MessagesContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Sidebar/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Sidebar/Sidebar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/redux/messages-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/messages-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/redux/user-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/user-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/user.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/user.routes.js" afterDir="false" />
-    </list>
+    <list default="true" id="110222cf-ba27-4941-b92e-1eab90ccc533" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -117,7 +93,7 @@
       <workItem from="1693467083756" duration="3742000" />
       <workItem from="1693470972275" duration="3135000" />
       <workItem from="1693474847088" duration="392000" />
-      <workItem from="1693475662437" duration="4152000" />
+      <workItem from="1693475662437" duration="4639000" />
     </task>
     <servers />
   </component>
