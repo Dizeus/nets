@@ -5,7 +5,7 @@ import {useDispatch} from "react-redux";
 import {addPost} from "../../redux/post-reducer";
 import '../../styles/css/MyPosts.css'
 
-function MyPosts({user, posts, isOwner}) {
+function MyPosts({user, posts, isOwner, mainUser}) {
 
     const dispatch = useDispatch()
 
@@ -18,7 +18,7 @@ function MyPosts({user, posts, isOwner}) {
         {isOwner && <NewPostForm onAddPost={onAddPost}/>}
         <h2 className="posts__title">Posts</h2>
         {posts?.map((post) => (
-            <Post fullname={user.fullname} isOwner={isOwner} key={post._id} post={post} avatar={user.avatar} userId={user.id}/>
+            <Post fullname={user.fullname} isOwner={isOwner} key={post._id} post={post} avatar={user.avatar} userId={isOwner?user.id:mainUser.id}/>
         ))}
     </div>
 }

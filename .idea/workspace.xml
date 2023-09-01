@@ -6,13 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="110222cf-ba27-4941-b92e-1eab90ccc533" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Friends/Friend.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Friends/Friend.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/Friends.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Friends.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/css/Friends.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/css/Friends.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/css/Friends.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/css/Friends.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/css/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/css/Header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/css/Header.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/css/Header.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Home/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Home/MyPosts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Home/MyPosts.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Home/Post.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Home/Post.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/redux/friend-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/friend-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/redux/post-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/post-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/post.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/post.routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +106,7 @@
       <workItem from="1693474847088" duration="392000" />
       <workItem from="1693475662437" duration="16000000" />
       <workItem from="1693550323743" duration="6921000" />
-      <workItem from="1693560485946" duration="1796000" />
+      <workItem from="1693560485946" duration="3526000" />
     </task>
     <servers />
   </component>

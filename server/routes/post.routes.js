@@ -34,15 +34,21 @@ router.put('/like/:id', async (req,res)=>{
         const {userId} = req.body
         const post = await Post.findOne({_id: postId})
         if(!post.likes.likedBy.includes(userId)) {
-            await Post.findOneAndUpdate(post, {
-                likes: {
+           post.likes={
                     count: post.likes.count + 1,
                     likedBy: [...post.likes.likedBy, userId]
-                }
-            })
-            const NewPost = await Post.findOne({_id: postId})
-            return res.json(NewPost)
+            }
+
+        }else{
+            post.likes = {
+                    count: post.likes.count - 1,
+                    likedBy: [...post.likes.likedBy.filter(id=>id!=userId)]
+            }
+
         }
+        await post.save()
+        return res.json(post)
+
     }catch (err){
         console.log(err)
         res.send({message: "Server error"})

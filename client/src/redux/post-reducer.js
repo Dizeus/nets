@@ -24,9 +24,7 @@ function postReducer(state = initialState, action){
         case SET_LIKE:
             return {
                 ...state,
-                posts: [...state.posts.map(x=> {
-                    return x._id !== action.payload._id?x:action.payload;}
-                )]
+                posts: [...state.posts.map(x=>x._id !== action.payload._id?x:action.payload)]
             }
         default:
             return state;
@@ -50,7 +48,6 @@ export const addPost = (text, author) => async (dispatch)=>{
 }
 export const deletePost = (postId) => async (dispatch)=>{
     const res = await api.deletePost(postId)
-    console.log(res)
     if(res.status == 200){
         dispatch(removeDeleted(postId))
     }

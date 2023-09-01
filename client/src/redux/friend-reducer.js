@@ -1,10 +1,10 @@
 import {api} from "../API/api";
-import {getPosts} from "./post-reducer";
+import {getPosts, setLike} from "./post-reducer";
 
 const SET_FRIEND_PROFILE = "SET_FRIEND_PROFILE";
 const SET_FRIEND_POSTS = "SET_FRIEND_POSTS"
 const SET_PEOPLE = "SET_PEOPLE";
-
+const SET_FRIEND_LIKE = 'SET_FRIEND_LIKE'
 
 const initialState = {
     people: [],
@@ -28,13 +28,18 @@ function friendReducer(state = initialState, action){
                 ...state,
                 people: action.payload
             }
-
+        case SET_FRIEND_LIKE:
+            return {
+                ...state,
+                friendPosts: [...state.friendPosts.map(x=>x._id !== action.payload._id?x:action.payload)]
+            }
         default:
             return state;
     }
 }
 
 export const setFriendProfile = (data) => ({ type: SET_FRIEND_PROFILE, payload: data});
+export const setFriendLike = (post) => ({ type: SET_FRIEND_LIKE, payload: post});
 export const setFriendPosts = (posts) => ({ type: SET_FRIEND_POSTS, payload: posts});
 export const setPeople = (people) => ({ type: SET_PEOPLE, payload: people});
 
@@ -49,6 +54,13 @@ export const getPeople = () => async (dispatch) =>{
     const res = await api.getPeople();
     if(res.status == 200)
         dispatch(setPeople(res.data.users))
+}
+export const likeFriendPost = (postId, userId) => async (dispatch)=>{
+    const res = await api.like(postId, userId)
+    console.log(res)
+    if(res.status == 200){
+        dispatch(setFriendLike(res.data))
+    }
 }
 
 export default friendReducer;

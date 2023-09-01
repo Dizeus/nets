@@ -2,6 +2,7 @@ import defAvatar from "../../assets/avatar.webp";
 import {useDispatch} from "react-redux";
 import {API_URL} from "../../config";
 import {deletePost, like} from "../../redux/post-reducer";
+import {likeFriendPost} from "../../redux/friend-reducer";
 
 function Post({post, isOwner, avatar, userId, fullname}) {
     const dispatch = useDispatch()
@@ -14,7 +15,7 @@ function Post({post, isOwner, avatar, userId, fullname}) {
                     {post.text}
 
                 </div>
-                <button className="post__like" onClick={()=>dispatch(like(post._id, userId))}>{post.likes.count} &#x2764;</button>
+                <button className="post__like" onClick={()=> isOwner?dispatch(like(post._id, userId)):dispatch(likeFriendPost(post._id, userId))}>{post.likes.count} &#x2764;</button>
                 {isOwner && <button className="post__delete" onClick={() => dispatch(deletePost(post._id))}>&#x2716;</button>}
             </div>
 
