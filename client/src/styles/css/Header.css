@@ -51,6 +51,8 @@
 }
 .header__profile-username {
   color: #a7bdd5;
+  font-size: 12px;
+  margin-top: 3px;
 }
 .header__profile-image {
   width: 40px;

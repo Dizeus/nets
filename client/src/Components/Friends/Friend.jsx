@@ -6,16 +6,13 @@ function Friend({user, friends,followUnfollow}) {
 
     return (
         <div className="user">
-            <div className="user__avatar-follow">
-                <NavLink to={"/home/"+user._id}><img className="user__image" src={user.avatar?`${API_URL}${user.avatar}`:defAvatar} alt="image"/></NavLink>
-
-               {friends.includes(user._id)?<button className="user__follow" onClick={()=>followUnfollow(user._id, false)}>unfollow</button>:
-                   <button className="user__follow" onClick={()=>followUnfollow(user._id, true)}> follow</button>}
-            </div>
+            <NavLink to={"/home/"+user._id}><img className="user__image" src={user.avatar?`${API_URL}${user.avatar}`:defAvatar} alt="image"/></NavLink>
             <div className="user__info">
                 <div className="user__name">{user.fullname}</div>
-                <div className="user__status">{user.status || "Status"}</div>
+                <div className="user__status">{user.status || ""}</div>
             </div>
+            {friends.includes(user._id)?<button className="button" onClick={()=>followUnfollow(user._id, false)}>unfollow</button>:
+                <button className="button" onClick={()=>followUnfollow(user._id, true)}> follow</button>}
         </div>
     );
 }
