@@ -1,5 +1,5 @@
 {
-  "name": "todolist",
+  "name": "nets",
   "version": "1.0.0",
   "description": "",
   "engines": {
@@ -12,8 +12,7 @@
     "start": "cd server && node server.js",
     "heroku-postbuild": "cd client && npm install && npm run build",
     "client": "cd client && npm start",
-    "all": "cd client && npm start && cd ../server && npm run start",
-    "server": "cd server && npm run dev"
+    "all": "cd client && npm start && cd ../server && npm run start"
   },
   "author": "",
   "license": "ISC",
