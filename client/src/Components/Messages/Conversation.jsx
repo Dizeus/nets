@@ -7,7 +7,7 @@ const Conversation = ({conversationInfo, sendMessage, profile}) => {
 
     return (<div className='messages__conversation conversation'>
                 <div className="conversation__header">
-                        <img src={conversationInfo.userInfo?.avatar?`${API_URL}${conversationInfo.userInfo.avatar}`:defAvatar} className="messages__profile-avatar"></img>
+                        <img src={conversationInfo.userInfo?.avatar?`${API_URL}${conversationInfo.userInfo.avatar}`:defAvatar} className="conversation__avatar"></img>
                         <div className="messages__profile-name">{conversationInfo.userInfo?.fullname}</div>
                 </div>
                 <div className="conversation__content">

@@ -158,5 +158,11 @@ body {
   padding-right: 20px;
   padding-left: 20px;
 }
+@media only screen and (max-width: 600px) {
+  [class*=__container] {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
 
 /*# sourceMappingURL=App.css.map */

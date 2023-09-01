@@ -2,15 +2,22 @@
   display: flex;
   justify-content: center;
   margin: 50px 0 0 0;
+  padding: 0 10px;
 }
 .auth__content {
   display: flex;
   flex-direction: column;
   row-gap: 30px;
-  width: 500px;
+  width: 450px;
+  min-width: 200px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.05) 0 6px 24px, rgba(0, 0, 0, 0.08) 0 0 0 1px;
+}
+@media only screen and (max-width: 600px) {
+  .auth__content {
+    width: 80%;
+  }
 }
 .auth__content form {
   display: flex;

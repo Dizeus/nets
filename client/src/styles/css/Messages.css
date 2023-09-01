@@ -50,6 +50,11 @@
   height: 40px;
   border-radius: 50%;
 }
+@media only screen and (max-width: 600px) {
+  .messages__profile-avatar {
+    display: none;
+  }
+}
 .conversation {
   display: flex;
   flex-direction: column;
@@ -86,8 +91,18 @@
   background-color: rgba(75, 117, 153, 0.74);
   border-radius: 0 10px 10px 10px;
 }
+.conversation__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
 .conversation__form {
   display: flex;
+}
+@media only screen and (max-width: 600px) {
+  .conversation__form {
+    flex-direction: column;
+  }
 }
 .conversation__input {
   flex: 1 1 auto;

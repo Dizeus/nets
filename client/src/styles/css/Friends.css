@@ -5,6 +5,13 @@
   column-gap: 20px;
   border-bottom: 1px solid #447094;
 }
+@media only screen and (max-width: 600px) {
+  .user {
+    flex-direction: column;
+    text-align: center;
+    row-gap: 10px;
+  }
+}
 .user__image {
   width: 60px;
   height: 60px;

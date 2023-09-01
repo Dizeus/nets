@@ -1,5 +1,8 @@
 @import "variables";
 .posts {
+  @media only screen and (max-width: 600px) {
+    text-align: center;
+  }
   &__title {
     font-size: 24px;
     font-weight: 500;
@@ -8,14 +11,20 @@
   &__form {
     display: flex;
     flex-direction: column;
-    max-width: 60%;
+    max-width: 600px;
     row-gap: 10px;
     margin: 0 0 10px 0;
+    @media only screen and (max-width: 600px) {
+      align-items: center;
+    }
   }
   &__input {
     background-color: $greyblue;
     padding: 10px;
     font-size: 16px;
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+    }
   }
   &__button{
     margin-top: 10px;
@@ -38,6 +47,9 @@
   column-gap: 20px;
   padding: 20px 0 10px 0;
   width: 100%;
+  @media only screen and (max-width: 600px) {
+    justify-content: center;
+  }
   &:not(:last-child) {
     border-bottom: 2px solid rgba(146, 145, 145, 0.658);
   }
