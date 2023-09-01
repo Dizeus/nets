@@ -10,11 +10,19 @@ const fileUpload = require("express-fileupload")
 const app = express()
 const PORT = process.env.PORT || config.get('serverPort')
 const cors = require('cors')
+const filePathMiddleware = require('./middleware/filepath.middleware')
+const path = require('path')
+const root = path.join(__dirname, '../client', 'build')
+app.use(express.static(root));
+
+if(process.env.NODE_ENV == "production"){
+    app.use(express.static(root))
+}
 
 app.use(fileUpload({}))
 app.use(cors())
+app.use(filePathMiddleware(path.resolve(__dirname, './static')))
 app.use(express.json())
-app.use(express.static('static'))
 app.use('/api/auth', authRouter)
 app.use('/api/posts', postRouter)
 app.use('/api/user', userRouter)

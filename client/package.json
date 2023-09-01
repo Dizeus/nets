@@ -47,5 +47,6 @@
     "eslint": "^8.47.0",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1"
-  }
+  },
+  "proxy": "http://localhost:8000"
 }

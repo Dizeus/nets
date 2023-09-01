@@ -55,8 +55,9 @@ router.post('/avatar', authMiddleware, async (req,res)=>{
         const file = req.files.file
         const user = await User.findOne({_id: req.user.id})
         const avatarName = uuid.v4() + '.jpg'
-        await file.mv(config.get('staticPath') + '\\' + avatarName)
-        user.avatar = avatarName
+        await file.mv(req.filePath + '\\' + avatarName)
+        console.log(req.filePath + '\\' + avatarName)
+        user.avatar = req.filePath + '\\' + avatarName
         await user.save()
         return res.json({user})
     }catch (err){

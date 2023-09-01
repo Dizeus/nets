@@ -6,32 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="110222cf-ba27-4941-b92e-1eab90ccc533" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Friends/Friend.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Friends/Friend.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Home/MyPosts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Home/MyPosts.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Home/Post.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Home/Post.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Login/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Messages/MessagesList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Messages/MessagesList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/Friends.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Friends.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/Login.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Login.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/MyPosts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/MyPosts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/css/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/css/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/css/App.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/css/App.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/css/Friends.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/css/Friends.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/css/Friends.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/css/Friends.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/css/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/css/Header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/css/Header.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/css/Header.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/css/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/css/Login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/css/Login.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/css/Login.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/css/MyPosts.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/css/MyPosts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/css/MyPosts.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/css/MyPosts.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/middlewear/authMiddlewear.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/middleware/auth.middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/auth.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/auth.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/friends.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/friends.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/message.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/message.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/post.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/post.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/API/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/API/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Home/Bio.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Home/Bio.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/middleware/filepath.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/middleware/filepath.middleware.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/user.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/user.routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
     </list>
@@ -128,7 +108,7 @@
       <workItem from="1693474847088" duration="392000" />
       <workItem from="1693475662437" duration="16000000" />
       <workItem from="1693550323743" duration="6921000" />
-      <workItem from="1693560485946" duration="10391000" />
+      <workItem from="1693560485946" duration="13673000" />
     </task>
     <servers />
   </component>
