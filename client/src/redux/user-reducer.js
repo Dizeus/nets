@@ -94,7 +94,13 @@ export const auth = () => async (dispatch)=>{
 }
 
 export const signup = (email, password, fullname) => async (dispatch)=>{
-    const res = await api.signup(email, password, fullname)
+    const response = await api.signup(email, password, fullname)
+    if(response?.status === 200) {
+        localStorage.setItem('token', response.data.token)
+        dispatch(setUser(response.data.user))
+        dispatch(getPosts(response.data.user.id, true))
+        dispatch(getMessageProfiles(response.data.user.conversations))
+    }
 }
 export const updateUserData = (values, id) => async (dispatch)=>{
     const {user} = await api.updateUserData(values, id)

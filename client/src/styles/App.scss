@@ -42,7 +42,7 @@ body{
 }
 .footer{
   width: 100%;
-  background-color: rgba(88, 130, 162, 0.62);
+  background-color: #7c9cba;
   padding: 10px;
   height: 40px;
   text-align: center;
@@ -59,6 +59,12 @@ body{
     color: $blue;
     border: 1px solid $blue;
   }
+}
+
+.developing{
+  font-size: 30px;
+  padding: 20px;
+  color: #8C8C8C;
 }
 [class*=__container] {
   margin: 0 auto;

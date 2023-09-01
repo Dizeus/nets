@@ -11,22 +11,20 @@ export const api = {
         try{
             return await base.post('api/auth/login', {email, password})
         }catch (err){
-            alert(err.response.data.message)
+            console.error(err)
         }
     },
     async auth(){
         try{
             return await base.get('api/auth/auth', {headers:{Authorization: `Bearer ${localStorage.getItem('token')}`}})
         }catch (err){
-            console.error(err)
         }
     },
     async signup(email, password, fullname){
         try{
-            const response = await base.post('api/auth/signup', {email, password, fullname})
-            return response.data
+            return await base.post('api/auth/signup', {email, password, fullname})
         }catch (err){
-            console.log(err.response.data.message)
+            console.error(err)
         }
     },
     async updateUserData(values, id){
@@ -34,57 +32,57 @@ export const api = {
             const response = await base.put('api/user/', {fullname: values.fullname, username: values.username, status: values.status, id})
             return response.data
         }catch (err){
-            console.log(err.response.data.message)
+            console.error(err)
         }
     },
     async getProfile(id){
         try{
-            const response = await base.get(`api/user/${id}`)
-            return response
+            return await base.get(`api/user/${id}`)
+
         }catch (err){
-            console.log(err.response.data.message)
+            console.error(err)
         }
     },
     async addPost(text, author){
         try{
             return await base.post('api/posts', {text, author})
         }catch (err){
-            alert(err.response.data.message)
+            console.error(err)
         }
     },
     async getPosts(id){
         try{
             return await base.get(`api/posts/${id}`)
         }catch (err){
-            alert(err.response.data.message)
+            console.error(err)
         }
     },
     async like(id, userId){
         try{
             return await base.put(`api/posts/like/${id}`, {userId})
         }catch (err){
-            alert(err.response.data.message)
+            console.error(err)
         }
     },
     async deletePost(id){
         try{
             return await base.delete(`api/posts/${id}`)
         }catch (err){
-            alert(err.response.data.message)
+            console.error(err)
         }
     },
     async getPeople(){
         try{
             return await base.get(`api/friends/`, {headers:{Authorization: `Bearer ${localStorage.getItem('token')}`}})
         }catch (err){
-            alert(err.response.data.message)
+            console.error(err)
         }
     },
     async followUnfollow(id, isFollow){
         try {
             return await base.put(`api/friends/${id}`, {isFollow} ,{headers:{Authorization: `Bearer ${localStorage.getItem('token')}`}})
         }catch (err){
-            alert(err.response.data.message)
+            console.error(err)
         }
     },
     async uploadAvatar(file){
@@ -93,31 +91,28 @@ export const api = {
             formData.append("file", file)
             return await base.post(`api/user/avatar`, formData, {headers:{Authorization: `Bearer ${localStorage.getItem('token')}`}})
         }catch (err){
-            alert(err.response.data.message)
+            console.error(err)
         }
     },
     async getConversation(id){
         try{
             return await base.get(`api/messages/${id}`, {headers:{Authorization: `Bearer ${localStorage.getItem('token')}`}})
         }catch (err){
-            alert(err.response.data.message)
+            console.error(err)
         }
     },
     async getMessageProfiles(id){
         try{
-
-            const response = await base.get(`api/user/message/${id}`)
-            return response
+            return await base.get(`api/user/message/${id}`)
         }catch (err){
-            console.log(err.response.data.message)
+            console.error(err)
         }
     },
     async sendMessage(message, convId){
         try{
-            const response = await base.put(`api/messages/`, {message, convId}, {headers:{Authorization: `Bearer ${localStorage.getItem('token')}`}})
-            return response
+            return await base.put(`api/messages/`, {message, convId}, {headers:{Authorization: `Bearer ${localStorage.getItem('token')}`}})
         }catch (err){
-            console.log(err.response.data.message)
+            console.error(err)
         }
     },
 

@@ -127,7 +127,7 @@ body {
 
 .footer {
   width: 100%;
-  background-color: rgba(88, 130, 162, 0.62);
+  background-color: #7c9cba;
   padding: 10px;
   height: 40px;
   text-align: center;
@@ -145,6 +145,12 @@ body {
   background-color: #F8F8F7;
   color: #447094;
   border: 1px solid #447094;
+}
+
+.developing {
+  font-size: 30px;
+  padding: 20px;
+  color: #8C8C8C;
 }
 
 [class*=__container] {

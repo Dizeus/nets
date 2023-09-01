@@ -10,7 +10,6 @@ const bcrypt = require("bcrypt");
 
 router.get('/:id', authMiddlewear, async (req,res)=>{
         try {
-            console.log(req.params.id)
             const conversation = await Conversation.findOne({part: [req.params.id, req.user.id]})
             const conversationReverse = await Conversation.findOne({part: [req.user.id, req.params.id]})
             if(conversation){

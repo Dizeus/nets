@@ -8,6 +8,7 @@ import {useDispatch} from "react-redux";
 import {auth} from "./redux/user-reducer";
 import FriendsContainer from "./Components/Friends/FriendsContainer";
 import MessagesContainer from "./Components/Messages/MessagesContainer";
+import Developing from "./Components/Developing/Developing";
 
 function App() {
     const dispatch = useDispatch()
@@ -26,11 +27,9 @@ function App() {
                         <Route path="/home/:userId?" element={<HomeContainer/>}/>
                         <Route path="/friends" element={<FriendsContainer />} />
                         <Route path="/messages/:receiver?" element={<MessagesContainer/>}/>
-                        {/*
-                        <Route path="/comunities" element={<Communities />} />
-
-                        <Route path="/games" element={<Games />} />
-                        <Route path="/settings" element={<Settings />} />*/}
+                        <Route path="/communities" element={<Developing />} />
+                        <Route path="/games" element={<Developing />} />
+                        <Route path="/settings" element={<Developing />} />
                         <Route path="/login" element={<Login />} />
                         <Route path="/" element={<Navigate to="/home" />} />
                     </Routes>

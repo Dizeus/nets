@@ -7,8 +7,8 @@ function Sidebar() {
                 <nav className="sidebar__navbar">
                     <NavLink className="sidebar__link" to="/home">Home</NavLink>
                     <NavLink className="sidebar__link" to="/messages">Messages</NavLink>
-                    <NavLink className="sidebar__link" to="/comunities">Comunities</NavLink>
                     <NavLink className="sidebar__link" to="/friends">Friends</NavLink>
+                    <NavLink className="sidebar__link" to="/communities">Communities</NavLink>
                     <NavLink className="sidebar__link" to="/games">Games</NavLink>
                     <NavLink className="sidebar__link" to="/settings">Settings</NavLink>
                 </nav>

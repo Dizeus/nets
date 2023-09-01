@@ -14,15 +14,12 @@ router.post('/signup',
     async (req,res)=>{
     try {
         const errors = validationResult(req)
-
         if(!errors.isEmpty()){
             return res.status(400).json({message: `Uncorrect request`, errors})
         }
         const {email, password, fullname} = req.body
 
-
         const isUserExist = await User.findOne({email})
-
         if(isUserExist){
             return res.status(400).json({message: `User with email ${email} already exist`})
         }
@@ -31,7 +28,22 @@ router.post('/signup',
         const hashedPassword = bcrypt.hashSync(password, salt)
         const user = new User({email, password: hashedPassword, fullname})
         await user.save()
-        return res.json('User was created')
+        const token = jwt.sign({id: user._id}, 'secret', { expiresIn: '1hr' })
+
+
+        return res.json({
+            token,
+            user:{
+                id: user._id,
+                email: user.email,
+                username: user.username,
+                status: user.status,
+                avatar: user.avatar,
+                friends: user.friends,
+                posts: user.posts,
+                fullname: user.fullname,
+                conversations: user.conversations
+            }})
     }catch (err){
         console.log(err)
         res.send({message: "Server error"})

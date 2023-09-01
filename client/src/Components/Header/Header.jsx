@@ -25,7 +25,7 @@ function Header({fullname, isAuth, avatar, logout, username}){
                         </div>
                         <button className='header__logout' onClick={()=>logout()}>Logout</button>
                     </div>:
-                    <div className='header__auth'>
+                    <div className='header__logout'>
                         <NavLink to='/login'>Login</NavLink>
                     </div>
                 }
