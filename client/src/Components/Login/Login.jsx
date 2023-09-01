@@ -12,7 +12,7 @@ function Login({isAuth, login, signup}){
         <Navigate to="/home" replace={true}/>:
         (
             <div className="auth">
-                <div className="auth__container">
+                <div className="auth__content">
                     <Formik
                             initialValues={{ email: '', fullname: '', password: '', confirmPassword: '',}}
                             validate={values => {
@@ -45,8 +45,7 @@ function Login({isAuth, login, signup}){
                               }) => (
 
                                 <form style={{display: 'flex', flexDirection: 'column', rowGap:'10px'}} onSubmit={handleSubmit}>
-                                    <h2>{isLoginForm  ? 'Please log in' : 'Please sign up!'}</h2>
-                                    Email
+                                    <p className='auth__label'>Email</p>
                                     <input
                                         type="email"
                                         name="email"
@@ -57,16 +56,20 @@ function Login({isAuth, login, signup}){
                                         placeholder={"Email"}
                                     />
                                     {errors.email && touched.email && errors.email}
-                                    {!isLoginForm && <><div>Fullname</div> <input
-                                        type="text"
-                                        name="fullname"
-                                        className='auth__input'
-                                        onChange={handleChange}
-                                        onBlur={handleBlur}
-                                        value={values.fullname}
-                                        placeholder={"Fullname"}
-                                        /></>}
-                                    Password
+                                    {!isLoginForm &&
+                                        <>
+                                            <p className='auth__label'>Fullname</p>
+                                            <input
+                                                type="text"
+                                                name="fullname"
+                                                className='auth__input'
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                                value={values.fullname}
+                                                placeholder={"Fullname"}
+                                            />
+                                        </>}
+                                    <p className='auth__label'>Password</p>
                                     <input
                                         type="password"
                                         name="password"
@@ -77,29 +80,34 @@ function Login({isAuth, login, signup}){
                                         placeholder={"Password"}
                                     />
                                     {errors.password && touched.password && errors.password}
-                                    {!isLoginForm && <input
-                                        className='auth__input'
-                                        required
-                                        type="password"
-                                        name='confirmPassword'
-                                        placeholder="Confirm password"
-                                        onBlur={handleBlur}
-                                        value={values.title}
-                                        onChange={handleChange}
-                                    />}
+                                    {!isLoginForm &&
+                                        <>
+                                            <p className='auth__label'>Confirm password</p>
+                                            <input
+                                                className='auth__input'
+                                                required
+                                                type="password"
+                                                name='confirmPassword'
+                                                placeholder="Confirm password"
+                                                onBlur={handleBlur}
+                                                value={values.title}
+                                                onChange={handleChange}
+                                            />
+                                        </>}
+
                                     {status && <div>{status.error}</div>       }
-                                    <input type="submit" className="auth__submit" disabled={isSubmitting}/>
+                                    <input type="submit" value={isLoginForm?'Sign in': "Sign up"} className="auth__submit button" disabled={isSubmitting}/>
                                 </form>
                             )}
                         </Formik>
                         <div className="auth__options">
-                            <button
+                            <button className={isLoginForm?'auth__option':'auth__option_active'}
                                 onClick={() => setIsLoginForm(false)}
-                                style={{backgroundColor : !isLoginForm ? 'rgb(255, 255, 255)' : 'rgb(188, 188, 188)'}}
+                                style={{backgroundColor : !isLoginForm ? '#447094' : 'rgb(255, 255, 255)'}}
                             >Sign Up</button>
-                            <button
+                            <button className={isLoginForm?'auth__option_active':'auth__option'}
                                 onClick={() => setIsLoginForm(true)}
-                                style={{backgroundColor : isLoginForm ? 'rgb(255, 255, 255)' : 'rgb(188, 188, 188)'}}
+                                style={{backgroundColor : isLoginForm ? '#447094' : 'rgb(255, 255, 255)'}}
                             >Login</button>
                         </div>
                     </div>

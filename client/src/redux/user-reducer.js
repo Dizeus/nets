@@ -1,7 +1,7 @@
 import {api} from "../API/api";
 import {getPosts} from "./post-reducer";
 import conversation from "../Components/Messages/Conversation";
-import {getMessageProfiles} from "./messages-reducer";
+import {addMessageProfile, getMessageProfiles} from "./messages-reducer";
 
 const SET_USER = "SET_USER";
 const SET_AVATAR = "SET_AVATAR";
@@ -56,9 +56,10 @@ function userReducer(state = initialState, action){
                 data: {...state.data, friends: [...state.data.friends.filter(x=>x!=action.payload)]}
             }
         case SET_CONVERSATION:
+            console.log([...state.data.conversations?.filter(conv=>conv.convId!=action.payload.convId), action.payload])
             return {
                 ...state,
-                data: {...state.data, conversations: [state.data.conversations?.filter(conv=>conv.id!=action.payload.convId), action.payload]}
+                data: {...state.data, conversations: [...state.data.conversations?.filter(conv=>conv.convId!=action.payload.convId), action.payload]}
             }
         default:
             return state;
@@ -114,6 +115,7 @@ export const followUnfollow = (id, isFollow) => async (dispatch) =>{
 
 export const addUserConversation = (convId, userId) => (dispatch) =>{
     dispatch(addConversation({convId, userId}))
+    dispatch(addMessageProfile(userId))
 }
 
 export default userReducer;

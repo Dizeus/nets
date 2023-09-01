@@ -134,6 +134,19 @@ body {
   color: #ffffff;
 }
 
+.button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #447094;
+  color: #F8F8F7;
+  transition: all 0.3s ease 0s;
+}
+.button:hover {
+  background-color: #F8F8F7;
+  color: #447094;
+  border: 1px solid #447094;
+}
+
 [class*=__container] {
   margin: 0 auto;
   padding-right: 20px;

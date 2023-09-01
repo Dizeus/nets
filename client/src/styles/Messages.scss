@@ -16,6 +16,11 @@
     padding: 10px;
     column-gap: 15px;
     border-bottom: 1px solid #447094;
+    transition: all 0.3s ease 0s;
+    &:hover{
+      background-color: $blue;
+      color: #F8F8F7;
+    }
   }
 
   &__profile-avatar {

@@ -2,6 +2,7 @@ import {api} from "../API/api";
 import {addConversation, addUserConversation} from "./user-reducer";
 
 const SET_CURR_CONV = "SET_CURR_CONV"
+const SET_MESSAGE_PROFILES = "SET_MESSAGE_PROFILES"
 const ADD_MESSAGE_PROFILE = "ADD_MESSAGE_PROFILE"
 
 const initialState = {
@@ -16,28 +17,40 @@ function messagesReducer(state = initialState, action){
                 ...state,
                 currConv: action.payload
             }
+        case SET_MESSAGE_PROFILES:
+            return {
+                ...state,
+                messageProfiles: [...action.payload]
+            }
         case ADD_MESSAGE_PROFILE:
             return {
                 ...state,
-                messageProfiles: [...state.messageProfiles, action.payload]
+                messageProfiles: [action.payload, ...state.messageProfiles.filter(profile=>profile.id!==action.payload.id)]
             }
         default:
             return state;
     }
 }
 
-const addMessageProfile = (profile) => ({ type: ADD_MESSAGE_PROFILE, payload: profile})
+const setMessageProfiles = (profiles) => ({ type: SET_MESSAGE_PROFILES, payload: profiles})
+const addMessageProfileAC = (profile) => ({ type: ADD_MESSAGE_PROFILE, payload: profile})
 const setCurrConv = (conv) =>({type: SET_CURR_CONV, payload: conv})
-export const getMessageProfiles = (conversations) => async (dispatch)=>{
 
+export const getMessageProfiles = (conversations) => async (dispatch)=>{
+    const profiles = []
     for(let conv of conversations){
         const res = await api.getMessageProfiles(conv.userId);
         if(res.status == 200)
-            dispatch(addMessageProfile(res.data.user))
+            profiles.push(res.data.user)
     }
+    dispatch(setMessageProfiles(profiles))
+}
+export const addMessageProfile = (userId) => async(dispatch) =>{
+    const res = await api.getMessageProfiles(userId);
+    if(res.status == 200)
+        dispatch(addMessageProfileAC(res.data.user))
 }
 export const getConversation = (receiverId) => async (dispatch) =>{
-
     const res = await api.getConversation(receiverId);
     if(res?.status == 200) {
         dispatch(setCurrConv(res.data.conversationInfo))

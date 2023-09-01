@@ -8,8 +8,8 @@ import Conversation from "./Conversation";
 import {getConversation, getMessageProfiles, sendMessage} from "../../redux/messages-reducer";
 import usePrevious from "../../Hook/usePrevious";
 import '../../styles/css/Messages.css'
+import {addUserConversation} from "../../redux/user-reducer";
 const MessagesContainer = (props) => {
-
 
     const receiverId= props.match.params.receiver
     const prevId = usePrevious(receiverId)
@@ -33,7 +33,7 @@ const mapStateToProps = (state) => ({
 
 })
 export default compose(
-    connect(mapStateToProps,{getConversation, sendMessage, getMessageProfiles}),
+    connect(mapStateToProps,{getConversation, sendMessage, getMessageProfiles, addUserConversation}),
     withAuthNavigate,
     withRouter,
 )(MessagesContainer);

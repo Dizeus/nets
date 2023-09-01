@@ -3,21 +3,23 @@
   display: flex;
   justify-content: center;
   margin: 50px 0 0 0;
-  &__container{
+  &__content{
     display: flex;
     flex-direction: column;
     row-gap: 30px;
     width: 500px;
     border-radius: 10px;
     overflow: hidden;
-    text-align: center;
     box-shadow: rgba(0, 0, 0, 0.05) 0 6px 24px, rgba(0, 0, 0, 0.08) 0 0 0 1px;
   }
-  &__container form {
+  &__content form {
     display: flex;
     flex-direction: column;
     min-height: 350px;
     padding: 20px;
+  }
+  &__label{
+    font-weight: 500;
   }
   &__input{
     height: 40px;
@@ -29,17 +31,21 @@
 
   }
 
-  &__options button {
+  &__option{
     width: 50%;
     border: none;
     padding: 10px;
     color: rgb(35, 38, 47);
+    box-shadow: inset 0px 0px 5px rgba(0,0,0,0.2);
+    &_active{
+      width: 50%;
+      border: none;
+      padding: 10px;
+      color: rgb(35, 38, 47);
+      background-color: #447094;
+      color: #F8F8F7;
+    }
   }
-  &__submit{
-    color: #1a1a23;
-    background-color: #e1e1e1;
-    cursor: pointer;
-    height: 30px;
-    border-radius: 5px;
-  }
+
+
 }

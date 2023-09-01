@@ -14,7 +14,6 @@ const Bio = ({avatar, status, username, id, fullname, isOwner, mainUser}) => {
     const saveNewProfileData = (values) =>{
         dispatch(updateUserData(values, id))
     }
-
     return (
 
             <div className="home__bio bio">
