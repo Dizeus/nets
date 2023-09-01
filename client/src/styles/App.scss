@@ -61,11 +61,18 @@ body{
   }
 }
 
+.none{
+  background-color: #e6e6e6;
+  margin: 10px;
+  padding: 10px;
+  color: #8C8C8C;
+}
 .developing{
   font-size: 30px;
   padding: 20px;
   color: #8C8C8C;
 }
+
 [class*=__container] {
   margin: 0 auto;
   padding-right: 20px;

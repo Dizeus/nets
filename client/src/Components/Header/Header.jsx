@@ -15,7 +15,9 @@ function Header({fullname, isAuth, avatar, logout, username}){
                     <div className="header__profile">
                         <div className='header__profile-content'>
                             <NavLink to={'/home'}>
-                            <img className='header__profile-image' src={avatar?`${API_URL}${avatar}`:defAvatar} alt="avatar"/>
+                                <div className='header__profile-image-container'>
+                                    <img className='header__profile-image' src={avatar?`${API_URL}${avatar}`:defAvatar} alt="avatar"/>
+                                </div>
                             </NavLink>
                             <div className='header__profile-text'>
                                 <div className='header__profile-fullname'>{fullname}</div>

@@ -42,6 +42,7 @@
     padding: 10px;
     color: rgb(35, 38, 47);
     box-shadow: inset 0px 0px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease 0s;
     &_active{
       width: 50%;
       border: none;
@@ -51,6 +52,17 @@
       color: #F8F8F7;
     }
   }
+  &__test{
+    background-color: lightcoral;
+    padding: 10px;
+    color: #F8F8F7;
+    transition: all 0.3s ease 0s;
+    &:hover{
+      background-color: #F8F8F7;
+      color: lightcoral;
+      border: 1px solid lightcoral;
+    }
 
+  }
 
 }

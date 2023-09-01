@@ -97,6 +97,7 @@ function Login({isAuth, login, signup}){
 
                                     {status && <div>{status.error}</div>       }
                                     <input type="submit" value={isLoginForm?'Sign in': "Sign up"} className="auth__submit button" disabled={isSubmitting}/>
+                                    {isLoginForm && <button type='button' onClick={()=>login('JohnDoe@gmail.com', 'test123')} className='auth__test'>Use test account</button>}
                                 </form>
                             )}
                         </Formik>

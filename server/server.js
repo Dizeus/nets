@@ -8,7 +8,7 @@ const friendsRouter = require('./routes/friends.routes')
 const messageRouter = require('./routes/message.routes')
 const fileUpload = require("express-fileupload")
 const app = express()
-const PORT = config.get('serverPort')
+const PORT = process.env.PORT || config.get('serverPort')
 const cors = require('cors')
 
 app.use(fileUpload({}))

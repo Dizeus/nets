@@ -6,7 +6,11 @@ function Friend({user, friends,followUnfollow}) {
 
     return (
         <div className="user">
-            <NavLink to={"/home/"+user._id}><img className="user__image" src={user.avatar?`${API_URL}${user.avatar}`:defAvatar} alt="image"/></NavLink>
+            <NavLink to={"/home/"+user._id}>
+                <div className='user__image-container'>
+                    <img className="user__image" src={user.avatar?`${API_URL}${user.avatar}`:defAvatar} alt="image"/>
+                </div>
+            </NavLink>
             <div className="user__info">
                 <div className="user__name">{user.fullname}</div>
                 <div className="user__status">{user.status || ""}</div>

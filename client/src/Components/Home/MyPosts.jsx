@@ -17,9 +17,13 @@ function MyPosts({user, posts, isOwner, mainUser}) {
 
         {isOwner && <NewPostForm onAddPost={onAddPost}/>}
         <h2 className="posts__title">Posts</h2>
-        {posts?.map((post) => (
-            <Post fullname={user.fullname} isOwner={isOwner} key={post._id} post={post} avatar={user.avatar} userId={isOwner?user.id:mainUser.id}/>
-        ))}
+        {posts.length !== 0 ?
+            posts?.map((post) => (
+                <Post fullname={user.fullname} isOwner={isOwner} key={post._id} post={post} avatar={user.avatar}
+                      userId={isOwner ? user.id : mainUser.id}/>
+            ))
+            :<div className='none'>No posts yet</div>
+        }
     </div>
 }
 
@@ -31,7 +35,7 @@ const NewPostForm = ({onAddPost}) =>{
             const errors = {};
             if (!values.newPostText) {
                 errors.newPostText = 'Post can\'t be empty';
-            } else if (values.newPostText.length>100) {
+            } else if (values.newPostText.length>500) {
                 errors.newPostText = 'Post text is too long!';
             }
             return errors;

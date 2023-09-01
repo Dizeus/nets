@@ -147,6 +147,13 @@ body {
   border: 1px solid #447094;
 }
 
+.none {
+  background-color: #e6e6e6;
+  margin: 10px;
+  padding: 10px;
+  color: #8C8C8C;
+}
+
 .developing {
   font-size: 30px;
   padding: 20px;

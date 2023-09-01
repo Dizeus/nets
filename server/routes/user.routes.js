@@ -1,7 +1,7 @@
 const Router = require("express")
 const config = require('config')
 const User = require("../models/User");
-const authMiddlewear = require("../middlewear/authMiddlewear");
+const authMiddleware = require("../middleware/auth.middleware");
 const router = new Router()
 const uuid = require('uuid')
 router.put('/', async (req,res)=>{
@@ -50,7 +50,7 @@ router.get('/:id', async (req,res)=>{
     }
 })
 
-router.post('/avatar', authMiddlewear, async (req,res)=>{
+router.post('/avatar', authMiddleware, async (req,res)=>{
     try {
         const file = req.files.file
         const user = await User.findOne({_id: req.user.id})

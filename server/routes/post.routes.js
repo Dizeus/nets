@@ -1,7 +1,6 @@
 const Router = require("express")
 const Post = require("../models/Post");
 const router = new Router()
-const authMiddlewear = require('../middlewear/authMiddlewear')
 
 router.post('/', async (req,res)=>{
         try {

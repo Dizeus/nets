@@ -2,13 +2,9 @@ const Router = require("express")
 const User = require('../models/User')
 const Conversation = require('../models/Conversation')
 const router = new Router()
-const authMiddlewear = require('../middlewear/authMiddlewear')
-const {check, validationResult} = require("express-validator");
-const bcrypt = require("bcrypt");
+const authMiddleware = require('../middleware/auth.middleware')
 
-
-
-router.get('/:id', authMiddlewear, async (req,res)=>{
+router.get('/:id', authMiddleware, async (req,res)=>{
         try {
             const conversation = await Conversation.findOne({part: [req.params.id, req.user.id]})
             const conversationReverse = await Conversation.findOne({part: [req.user.id, req.params.id]})
@@ -37,7 +33,7 @@ router.get('/:id', authMiddlewear, async (req,res)=>{
             res.send({message: "Server error"})
         }
 })
-router.put('/', authMiddlewear,  async (req,res)=>{
+router.put('/', authMiddleware,  async (req,res)=>{
     try {
         const {message, convId} = req.body
         const conversation = await Conversation.findOne({_id: convId})

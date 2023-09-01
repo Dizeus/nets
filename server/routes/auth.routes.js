@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt')
 const {check, validationResult} = require('express-validator')
 const router = new Router()
 const jwt = require('jsonwebtoken')
-const authMiddlewear = require('../middlewear/authMiddlewear')
+const authMiddleware = require('../middleware/auth.middleware')
 router.post('/signup',
     [
         check('email', 'Uncorrect email').isEmail(),
@@ -85,7 +85,7 @@ router.post('/login',  async (req,res)=>{
         res.send({message: "Server error"})
     }
 })
- router.get('/auth', authMiddlewear,  async (req,res)=>{
+ router.get('/auth', authMiddleware,  async (req,res)=>{
     try {
         const user = await User.findOne({_id: req.user.id})
         const token = jwt.sign({id: user.id}, 'secret', { expiresIn: '1hr' })
