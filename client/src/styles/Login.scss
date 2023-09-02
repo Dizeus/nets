@@ -1,0 +1,68 @@
+
+.auth{
+  display: flex;
+  justify-content: center;
+  margin: 50px 0 0 0;
+  padding: 0 10px;
+  &__content{
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    width: 450px;
+    min-width: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.05) 0 6px 24px, rgba(0, 0, 0, 0.08) 0 0 0 1px;
+    @media only screen and (max-width: 600px) {
+      width: 80%;
+    }
+  }
+  &__content form {
+    display: flex;
+    flex-direction: column;
+    min-height: 350px;
+    padding: 20px;
+  }
+  &__label{
+    font-weight: 500;
+  }
+  &__input{
+    height: 40px;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  &__options {
+    display: flex;
+
+  }
+
+  &__option{
+    width: 50%;
+    border: none;
+    padding: 10px;
+    color: rgb(35, 38, 47);
+    box-shadow: inset 0px 0px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease 0s;
+    &_active{
+      width: 50%;
+      border: none;
+      padding: 10px;
+      color: rgb(35, 38, 47);
+      background-color: #447094;
+      color: #F8F8F7;
+    }
+  }
+  &__test{
+    background-color: lightcoral;
+    padding: 10px;
+    color: #F8F8F7;
+    transition: all 0.3s ease 0s;
+    &:hover{
+      background-color: #F8F8F7;
+      color: lightcoral;
+      border: 1px solid lightcoral;
+    }
+
+  }
+
+}

@@ -14,7 +14,11 @@ const filePathMiddleware = require('./middleware/filepath.middleware')
 const path = require('path')
 const root = path.join(__dirname, '../client', 'build')
 app.use(express.static(root));
-app.use(express.static('static'));
+
+if(process.env.NODE_ENV == "production"){
+    app.use(express.static(root))
+}
+
 app.use(fileUpload({}))
 app.use(cors())
 app.use(filePathMiddleware(path.resolve(__dirname, './static')))

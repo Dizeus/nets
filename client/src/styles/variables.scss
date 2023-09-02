@@ -1,0 +1,27 @@
+.light{
+  --mainBackground: #F8F8F7;
+  --mainBackgroundTransparent: #F8F8F7;
+  --lightBackground: #FFF;
+  --lightBackgroundToBlack: #FFF;
+  --coral: #FF868E;
+  --lightCoral: #FBE0DC;
+  --lightCoralTransparent: #FBE0DC;
+  --black: #1D1D1D;
+  --grey: #8C8C8C;
+}
+
+.dark {
+  --mainBackground: #1D1D1D;
+  --mainBackgroundTransparent: #282828;
+  --lightBackground: rgba(255,255,255,0.1);
+  --lightBackgroundToBlack: #282828;
+  --coral: #FF868E;
+  --lightCoral: rgba(255,255,255,0.05);
+  --lightCoralTransparent: rgba(255, 134, 142, 0.2);
+  --black: #FFF;
+  --grey: #8C8C8C;
+}
+
+$mainBackground: #F8F8F7;
+$blue:  #447094;
+$greyblue: rgba(185, 194, 213, 0.42);
