@@ -8,7 +8,8 @@ function Friend({user, friends,followUnfollow}) {
         <div className="user">
             <NavLink to={"/home/"+user._id}>
                 <div className='user__image-container'>
-                    <img className="user__image" src={user.avatar?`${API_URL}${user.avatar}`:defAvatar} alt="image"/>
+                    {console.log(user.avatar)}
+                    <img className="user__image" src={user.avatar?user.avatar:defAvatar} alt="image"/>
                 </div>
             </NavLink>
             <div className="user__info">

@@ -9,7 +9,7 @@ function Post({post, isOwner, avatar, userId, fullname}) {
     return (
         <div className="post">
             <div className="post__avatar-container">
-                <img src={avatar?`${API_URL}${avatar}`:defAvatar} className="post__avatar" />
+                <img src={avatar?avatar:defAvatar} className="post__avatar" />
             </div>
             <div className="post__content">
                 <div className="post__author">{fullname} <span className="post__date">{post.date.slice(0,10).replaceAll('-','.')}</span></div>

@@ -19,7 +19,7 @@ const HomeContainer = (props) => {
         }
 
     }
-    useEffect(()=>initializeApp,[])
+    useEffect(()=>initializeApp(),[])
 
 
     return isOwner?<Home user={props.user} posts={props.posts} isOwner={isOwner}/>:<Home mainUser={props.user} user={props.friendProfile} posts={props.friendPosts} isOwner={isOwner}/>

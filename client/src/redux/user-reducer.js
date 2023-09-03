@@ -79,10 +79,12 @@ export const login = (email, password) => async (dispatch)=>{
         dispatch(setUser(response.data.user))
         localStorage.setItem('token', response.data.token)
          dispatch(getPosts(response.data.user.id, true))
+         dispatch(getMessageProfiles(response.data.user.conversations))
     }
 }
 export const auth = () => async (dispatch)=>{
      const response = await api.auth()
+        console.log(response)
      if(response?.status === 200) {
          localStorage.setItem('token', response.data.token)
          dispatch(setUser(response.data.user))

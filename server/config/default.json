@@ -1,5 +1,7 @@
 {
-  "serverPort": 8000,
+  "serverPort" : 5000,
   "dbUrl": "mongodb+srv://illia:1243@project-cluster.m0cavne.mongodb.net/?retryWrites=true&w=majority",
-  "staticPath": "D:\\web\\pet-ptojects\\networker\\server\\static"
+  "secretKey": "mern-secket-key",
+  "filePath": "C:\\Users\\tim\\Desktop\\mern-cloud-disk\\server\\files",
+  "staticPath": "C:\\Users\\tim\\Desktop\\mern-cloud-disk\\server\\static"
 }

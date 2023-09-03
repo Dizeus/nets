@@ -10,7 +10,7 @@ const MessagesList = React.memo(({conversations, messageProfiles}) => (
         messageProfiles?.map(profile=>(
             <NavLink key={profile.id} to={'/messages/'+ profile.id}>
             <div className="messages__profile">
-                <img src={profile.avatar?`${API_URL}${profile.avatar}`:defAvatar} className="messages__profile-avatar"></img>
+                <img src={profile.avatar?profile.avatar:defAvatar} className="messages__profile-avatar"></img>
                 <div className="messages__profile-name">{profile.fullname}</div>
             </div>
             </NavLink>))

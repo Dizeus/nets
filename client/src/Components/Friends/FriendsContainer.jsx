@@ -9,7 +9,9 @@ import {followUnfollow} from "../../redux/user-reducer";
 
 const FriendsContainer = ({people,friends, getPeople, followUnfollow}) => {
 
-    useEffect(()=>getPeople, [])
+    useEffect(()=> {
+        getPeople()
+    }, [])
 
     return(
             <Friends friends={friends} people={people} followUnfollow={followUnfollow}/>

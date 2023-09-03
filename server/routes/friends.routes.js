@@ -1,11 +1,7 @@
 const Router = require("express")
 const User = require('../models/User')
-const bcrypt = require('bcrypt')
-const {check, validationResult} = require('express-validator')
 const router = new Router()
-const jwt = require('jsonwebtoken')
 const authMiddleware = require('../middleware/auth.middleware')
-const Post = require("../models/Post");
 
 router.get('/',authMiddleware, async (req,res)=>{
         try {

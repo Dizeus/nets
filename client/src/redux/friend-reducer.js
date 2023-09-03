@@ -45,6 +45,7 @@ export const setPeople = (people) => ({ type: SET_PEOPLE, payload: people});
 
 export const getProfile = (id) => async (dispatch)=>{
     const response = await api.getProfile(id)
+    console.log(response)
     if(response.status === 200){
         dispatch(setFriendProfile(response.data.user))
         dispatch(getPosts(id, false))
@@ -52,7 +53,7 @@ export const getProfile = (id) => async (dispatch)=>{
 }
 export const getPeople = () => async (dispatch) =>{
     const res = await api.getPeople();
-    if(res.status == 200)
+    if(res?.status == 200)
         dispatch(setPeople(res.data.users))
 }
 export const likeFriendPost = (postId, userId) => async (dispatch)=>{

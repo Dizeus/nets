@@ -15,7 +15,9 @@ function App() {
     const initializeApp = () =>{
         dispatch(auth())
     }
-    useEffect(()=>initializeApp)
+    useEffect(()=> {
+        initializeApp()
+    })
   return (
     <div className="App">
       <HeaderContainer/>

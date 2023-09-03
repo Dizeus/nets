@@ -1,32 +1,32 @@
 import axios from "axios";
 
-const base = axios.create()
-
 export const api = {
 
     async login(email, password){
         try{
-            return await base.post('api/auth/login', {email, password})
+            const response = await axios.post('/api/auth/login', {email, password})
+            console.log(response)
+            return response
         }catch (err){
             console.error(err)
         }
     },
     async auth(){
         try{
-            return await base.get('api/auth/auth', {headers:{Authorization: `Bearer ${localStorage.getItem('token')}`}})
+            return await axios.get('/api/auth/auth', {headers:{Authorization: `Bearer ${localStorage.getItem('token')}`}})
         }catch (err){
         }
     },
     async signup(email, password, fullname){
         try{
-            return await base.post('api/auth/signup', {email, password, fullname})
+            return await axios.post('/api/auth/signup', {email, password, fullname})
         }catch (err){
             console.error(err)
         }
     },
     async updateUserData(values, id){
         try{
-            const response = await base.put('api/user/', {fullname: values.fullname, username: values.username, status: values.status, id})
+            const response = await axios.put('/api/user/', {fullname: values.fullname, username: values.username, status: values.status, id})
             return response.data
         }catch (err){
             console.error(err)
@@ -34,7 +34,7 @@ export const api = {
     },
     async getProfile(id){
         try{
-            return await base.get(`api/user/${id}`)
+            return await axios.get(`/api/user/${id}`)
 
         }catch (err){
             console.error(err)
@@ -42,42 +42,42 @@ export const api = {
     },
     async addPost(text, author){
         try{
-            return await base.post('api/posts', {text, author})
+            return await axios.post('/api/posts', {text, author})
         }catch (err){
             console.error(err)
         }
     },
     async getPosts(id){
         try{
-            return await base.get(`api/posts/${id}`)
+            return await axios.get(`/api/posts/${id}`)
         }catch (err){
             console.error(err)
         }
     },
     async like(id, userId){
         try{
-            return await base.put(`api/posts/like/${id}`, {userId})
+            return await axios.put(`/api/posts/like/${id}`, {userId})
         }catch (err){
             console.error(err)
         }
     },
     async deletePost(id){
         try{
-            return await base.delete(`api/posts/${id}`)
+            return await axios.delete(`/api/posts/${id}`)
         }catch (err){
             console.error(err)
         }
     },
     async getPeople(){
         try{
-            return await base.get(`api/friends/`, {headers:{Authorization: `Bearer ${localStorage.getItem('token')}`}})
+            return await axios.get(`/api/friends/`, {headers:{Authorization: `Bearer ${localStorage.getItem('token')}`}})
         }catch (err){
             console.error(err)
         }
     },
     async followUnfollow(id, isFollow){
         try {
-            return await base.put(`api/friends/${id}`, {isFollow} ,{headers:{Authorization: `Bearer ${localStorage.getItem('token')}`}})
+            return await axios.put(`/api/friends/${id}`, {isFollow} ,{headers:{Authorization: `Bearer ${localStorage.getItem('token')}`}})
         }catch (err){
             console.error(err)
         }
@@ -86,28 +86,29 @@ export const api = {
         try{
             const formData = new FormData();
             formData.append("file", file)
-            return await base.post(`api/user/avatar`, formData, {headers:{Authorization: `Bearer ${localStorage.getItem('token')}`}})
+            console.log(localStorage.getItem('token'))
+            return await axios.post(`/api/user/avatar`, formData, {headers:{Authorization: `Bearer ${localStorage.getItem('token')}`}})
         }catch (err){
             console.error(err)
         }
     },
     async getConversation(id){
         try{
-            return await base.get(`api/messages/${id}`, {headers:{Authorization: `Bearer ${localStorage.getItem('token')}`}})
+            return await axios.get(`/api/messages/${id}`, {headers:{Authorization: `Bearer ${localStorage.getItem('token')}`}})
         }catch (err){
             console.error(err)
         }
     },
     async getMessageProfiles(id){
         try{
-            return await base.get(`api/user/message/${id}`)
+            return await axios.get(`/api/user/message/${id}`)
         }catch (err){
             console.error(err)
         }
     },
     async sendMessage(message, convId){
         try{
-            return await base.put(`api/messages/`, {message, convId}, {headers:{Authorization: `Bearer ${localStorage.getItem('token')}`}})
+            return await axios.put(`/api/messages/`, {message, convId}, {headers:{Authorization: `Bearer ${localStorage.getItem('token')}`}})
         }catch (err){
             console.error(err)
         }

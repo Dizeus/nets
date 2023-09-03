@@ -3,6 +3,7 @@ const config = require('config')
 const User = require("../models/User");
 const authMiddleware = require("../middleware/auth.middleware");
 const router = new Router()
+const fs = require('fs');
 const uuid = require('uuid')
 router.put('/', async (req,res)=>{
     try {
@@ -14,7 +15,7 @@ router.put('/', async (req,res)=>{
         const user = await User.findOne({_id: id})
         return res.json({
             user: {
-                id: user.id,
+                id: user._id,
                 email: user.email,
                 username: user.username,
                 status: user.status,
@@ -33,9 +34,11 @@ router.put('/', async (req,res)=>{
 router.get('/:id', async (req,res)=>{
     try {
         const user = await User.findOne({_id: req.params.id})
+        console.log(req.params.id)
+        console.log(user)
         return res.json({
             user:{
-                id: user.id,
+                id: user._id,
                 email: user.email,
                 username: user.username,
                 status: user.status,
@@ -52,12 +55,18 @@ router.get('/:id', async (req,res)=>{
 
 router.post('/avatar', authMiddleware, async (req,res)=>{
     try {
+        console.log('IN POST')
         const file = req.files.file
         const user = await User.findOne({_id: req.user.id})
         const avatarName = uuid.v4() + '.jpg'
-        await file.mv(req.filePath + '\\' + avatarName)
-        console.log(req.filePath + '\\' + avatarName)
-        user.avatar = req.filePath + '\\' + avatarName
+        console.log(avatarName)
+        if (!fs.existsSync(req.filePath)) {
+            fs.mkdirSync(req.filePath);
+        }
+        await file.mv(req.filePath + '/' + avatarName)
+        user.avatar = `/api/avatar/${avatarName}`
+        console.log(req.filePath)
+        console.log(__dirname)
         await user.save()
         return res.json({user})
     }catch (err){
@@ -73,7 +82,7 @@ router.get('/message/:id', async (req,res)=>{
             user:{
                 id: user._id,
                 avatar: user.avatar,
-                fullname: user.fullname
+                fullname: user.fullname,
             }})
     }catch (err){
         console.log(err)

@@ -21,7 +21,6 @@ const Bio = ({avatar, status, username, id, fullname, isOwner, mainUser}) => {
                     dispatch(uploadAvatar(e.target.files[0]))
                 }} type="file"/>
                 <div className='bio__photo'>
-                    {console.log(avatar)}
                     <img src={avatar?avatar:defAvatar}
                          className="bio__avatar"/>
                     {isOwner && <button className="bio__avatar-button" onClick={() => filePicker.current.click()}><p>&#x2B;</p></button>}
