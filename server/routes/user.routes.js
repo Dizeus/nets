@@ -64,9 +64,8 @@ router.post('/avatar', authMiddleware, async (req,res)=>{
             fs.mkdirSync(req.filePath);
         }
         await file.mv(req.filePath + '/' + avatarName)
-        user.avatar = `/api/avatar/${avatarName}`
-        console.log(req.filePath)
-        console.log(__dirname)
+        console.log(req.filePath + '/' + avatarName)
+        user.avatar = `/images/${avatarName}`
         await user.save()
         return res.json({user})
     }catch (err){

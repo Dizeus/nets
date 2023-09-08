@@ -1,7 +1,6 @@
 import {NavLink} from "react-router-dom";
 import '../../styles/css/Header.css'
 import defAvatar from '../../assets/avatar.webp'
-import {API_URL} from "../../config";
 function Header({fullname, isAuth, avatar, logout, username}){
     return (
         <header className="header">

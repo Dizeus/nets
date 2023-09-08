@@ -9,7 +9,7 @@ function Friend({user, friends,followUnfollow}) {
             <NavLink to={"/home/"+user._id}>
                 <div className='user__image-container'>
                     {console.log(user.avatar)}
-                    <img className="user__image" src={user.avatar?user.avatar:defAvatar} alt="image"/>
+                    <img className="user__image" src={user.avatar?'%PUBLIC_URL%/'+user.avatar:defAvatar} alt="image"/>
                 </div>
             </NavLink>
             <div className="user__info">

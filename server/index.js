@@ -19,7 +19,7 @@ if(process.env.NODE_ENV == "production"){
     app.use(express.static(path.join(__dirname, '../client/build')))
 }
 
-app.use(filePathMiddleware(path.resolve(__dirname, 'images')))
+app.use(filePathMiddleware(path.resolve(__dirname, '../client/public/images')))
 app.use(fileUpload({}))
 app.use(corsMiddleware)
 app.use(express.json())
