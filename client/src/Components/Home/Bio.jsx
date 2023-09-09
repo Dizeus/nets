@@ -51,11 +51,11 @@ const BioDescription = ({status, username, fullname, setEditMode, isOwner})=>{
         <div className="description__info">
             <div className="description__status">
                 <span className="description__categories">Status: </span>
-                {status || "something" }
+                {status || "none" }
             </div>
             <div className="description__username">
                 <span className="description__categories">Username: </span>
-                {username || "Something about me"}
+                {username || "no username"}
             </div>
             {isOwner && <button className="description__button" onClick={() => setEditMode(true)}>Edit</button>}
         </div>

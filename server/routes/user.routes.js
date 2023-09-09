@@ -55,11 +55,9 @@ router.get('/:id', async (req,res)=>{
 
 router.post('/avatar', authMiddleware, async (req,res)=>{
     try {
-        console.log('IN POST')
         const file = req.files.file
         const user = await User.findOne({_id: req.user.id})
         const avatarName = uuid.v4() + '.jpg'
-        console.log(avatarName)
         if (!fs.existsSync(req.filePath)) {
             fs.mkdirSync(req.filePath);
         }
