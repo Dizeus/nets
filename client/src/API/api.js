@@ -82,12 +82,9 @@ export const api = {
             console.error(err)
         }
     },
-    async uploadAvatar(file){
+    async uploadAvatar(base64){
         try{
-            const formData = new FormData();
-            formData.append("file", file)
-            console.log(localStorage.getItem('token'))
-            return await axios.post(`/api/user/avatar`, formData, {headers:{Authorization: `Bearer ${localStorage.getItem('token')}`}})
+            return await axios.post(`/api/user/avatar`, {base64}, {headers:{Authorization: `Bearer ${localStorage.getItem('token')}`}})
         }catch (err){
             console.error(err)
         }

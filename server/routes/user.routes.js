@@ -55,15 +55,9 @@ router.get('/:id', async (req,res)=>{
 
 router.post('/avatar', authMiddleware, async (req,res)=>{
     try {
-        const file = req.files.file
+        const {base64} = req.body
         const user = await User.findOne({_id: req.user.id})
-        const avatarName = uuid.v4() + '.jpg'
-        if (!fs.existsSync(req.filePath)) {
-            fs.mkdirSync(req.filePath);
-        }
-        await file.mv(req.filePath + '/' + avatarName)
-        console.log(req.filePath + '/' + avatarName)
-        user.avatar = `/images/${avatarName}`
+        user.avatar = base64
         await user.save()
         return res.json({user})
     }catch (err){
@@ -86,6 +80,5 @@ router.get('/message/:id', async (req,res)=>{
         res.send({message: "Server error profile"})
     }
 })
-
 
 module.exports = router

@@ -109,7 +109,8 @@ export const updateUserData = (values, id) => async (dispatch)=>{
     dispatch(setUser(user))
 }
 export const uploadAvatar = (file) => async (dispatch) =>{
-    const res = await api.uploadAvatar(file);
+    const base64 = await convertToBase64(file)
+    const res = await api.uploadAvatar(base64);
     if(res.status == 200)
         dispatch(setAvatar(res.data.user.avatar))
 }
@@ -127,3 +128,16 @@ export const addUserConversation = (convId, userId) => (dispatch) =>{
 }
 
 export default userReducer;
+
+function convertToBase64(file){
+    return new Promise((resolve, reject) => {
+        const fileReader = new FileReader();
+        fileReader.readAsDataURL(file);
+        fileReader.onload = () => {
+            resolve(fileReader.result)
+        };
+        fileReader.onerror = (error) => {
+            reject(error)
+        }
+    })
+}
