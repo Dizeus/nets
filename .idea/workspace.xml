@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="110222cf-ba27-4941-b92e-1eab90ccc533" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/API/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/API/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/middleware/filepath.middleware.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/user.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/user.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +54,7 @@
     "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "terminal",
+    "settings.editor.selected.configurable": "watcher.settings",
     "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2023.1.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
@@ -121,7 +119,10 @@
       <workItem from="1694098369945" duration="591000" />
       <workItem from="1694165889073" duration="928000" />
       <workItem from="1694171280140" duration="178000" />
-      <workItem from="1694171461005" duration="5371000" />
+      <workItem from="1694171461005" duration="6298000" />
+      <workItem from="1694249035874" duration="840000" />
+      <workItem from="1694344856823" duration="106000" />
+      <workItem from="1694346260205" duration="340000" />
     </task>
     <servers />
   </component>
