@@ -21,8 +21,5 @@ Nets provides a seamless and intuitive user experience. Here are some ways you c
 ## Support and Contribution🙌
 If you encounter any issues or have suggestions for improvements, please feel free to create a new issue. Contributions to enhance the project are always welcome. Fork the repository, make your changes, and submit a pull request.
 
-## License
-This project is open-source and available under the MIT License. For more details, please see the LICENSE file.
-
 ***
 Thank you for using our Nets application.
